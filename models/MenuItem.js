@@ -7,4 +7,4 @@ const foodSchema = mongoose.Schema({
     price: {type: Number, require: true, min: 0, max: 500}
 })
 
-module.exports = mongoose.model('Food', foodSchema);
+module.exports = mongoose.model('MenuItem', foodSchema);
