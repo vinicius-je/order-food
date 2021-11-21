@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+}
+
+.card-container{
+    max-width: 280px;
+    margin-bottom: 40px;
+    padding: 15px;
+    border: 1px solid #C4C4C4;
+}
+
+.card-container img{
+    width: 248px;
+    height: 165px;
+    margin: 10px 0;
+}
+
+.name, .price{
+    text-align: center;
+}
+
+.description{
+    margin: 10px 0;
+    font-size: .875rem;
+    text-align: justify;
+}
+
+.order-btn{
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px 0;
+    font-size: 1.125rem;
+    border: none;
+}
+
+.order-btn:hover{
+    background-color: #bebebe;
+}
