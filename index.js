@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const menuRouter = require('./Routers/menu')
+const path = require('path')
+const menuRouter = require('./Routers/menu');
 
 require('dotenv').config();
 
@@ -11,6 +12,16 @@ mongoose.connect(process.env.MONGO_CONNECTION_URL)
     .catch(console.log)
 
 const PORT = 4000;
+
+app.use(express.static(path.join(__dirname, 'client/build')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build/index.html'), (error) => {
+        if(error) {
+            res.status(500).send(error)
+        }
+    })
+})
 
 app.use('/menu', menuRouter)
 
