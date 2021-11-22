@@ -1,6 +1,7 @@
 
 export const getMenuItems = async () => {
-    await fetch('http://localhost:4000/menu/items')
-        .then(console.log)
+    await fetch('/menu/items')
+        .then(res => res.json())
+        .then(doc => console.log(doc))
         .catch(console.log)
 }

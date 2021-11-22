@@ -11,11 +11,11 @@ mongoose.connect(process.env.MONGO_CONNECTION_URL)
     .then(console.log('mongo connected'))
     .catch(console.log)
 
-const PORT = 4000;
+const PORT = 3000;
 
 app.use(express.static(path.join(__dirname, 'client/build')))
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'client/build/index.html'), (error) => {
         if(error) {
             res.status(500).send(error)
