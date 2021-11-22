@@ -16,8 +16,8 @@ const createFood = async (req, res) => {
     }
 }
 
-const sendMenuItems = async (res) => {
-    const items = await MenuItem.find()
+const sendMenuItems = async (req, res) => {
+    const items = await MenuItem.find({})
     res.send(items)
 }
 
