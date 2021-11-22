@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { getMenuItems } from '../redux/fetchActions';
 import './MenuContainer.css'
 
 export default function Menu(props){
+
+    useEffect(() => {
+        getMenuItems()
+    }, [])
+
     return(
         <div className='container'>
             <div className='card-container'>
