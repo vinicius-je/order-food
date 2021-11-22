@@ -1,7 +1,10 @@
+import { getMenuItems } from "../menu"
 
-export const getMenuItems = async () => {
-    await fetch('/menu/items')
-        .then(res => res.json())
-        .then(doc => console.log(doc))
-        .catch(console.log)
+export const fetchMenuItems = () => {
+    return dispatch => {
+        fetch('/menu/items')
+            .then(res => res.json())
+            .then(doc => dispatch(getMenuItems(doc)))
+            .catch(console.log)
+    }
 }

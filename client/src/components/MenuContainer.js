@@ -1,12 +1,20 @@
 import React, { useEffect } from 'react';
-import { getMenuItems } from '../redux/fetchActions';
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchMenuItems } from '../redux/fetchActions';
 import './MenuContainer.css'
 
 export default function Menu(props){
 
+    const menuItems = useSelector(state => state.menu)
+    const dispatch = useDispatch()
+
     useEffect(() => {
-        getMenuItems()
-    }, [])
+        dispatch(fetchMenuItems())
+    }, [ dispatch ])
+
+    useEffect(() => {
+        console.log(menuItems)
+    }, [ menuItems ])
 
     return(
         <div className='container'>
