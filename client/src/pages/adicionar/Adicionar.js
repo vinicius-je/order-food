@@ -1,9 +1,12 @@
 import React, { useState } from 'react' 
+import { useDispatch } from 'react-redux'
+import { postNewMenuItem } from '../../redux/fetchActions';
 import './style.css'
 
 export default function Adicionar(){
 
     const [form, setForm] = useState({url: '', name: '', description: '', price: 0})
+    const dispatch = useDispatch()
 
     function formChange(e){
         setForm({...form, [e.target.name]: e.target.value})
@@ -11,7 +14,9 @@ export default function Adicionar(){
 
     function onSubmit(e){
         e.preventDefault();
-        // console.log(form);
+        console.log(form);
+
+        dispatch(postNewMenuItem(form))
         setForm({url: '', name: '', description: '', price: 0})
     }
 

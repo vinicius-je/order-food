@@ -6,7 +6,7 @@ const foodControllers = require('../controllers/menuController');
 
 router.get('/items', express.json(), foodControllers.sendMenuItems);
 
-router.post('/add', express.urlencoded({extended: true}), foodControllers.createFood);
+router.post('/add', express.json(), foodControllers.createFood);
 
 router.put('/edit/:id', express.urlencoded({extended: true}), foodControllers.editMenuItem);
 
