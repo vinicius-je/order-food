@@ -10,7 +10,7 @@ export default function Header(){
                 <li><Link to='/adicionar'>adicionar</Link></li>
                 <li>editar</li>
             </ul>
-            <i className='fas fa-cart-plus'></i>
+            <Link to='/cart'><i className='fas fa-cart-plus'></i></Link>
         </header>
     )
 }

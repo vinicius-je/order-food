@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMenuItems } from '../redux/fetchActions';
-import './MenuContainer.css'
+import { fetchMenuItems } from '../../redux/fetchActions';
+import './style.css'
 
-import Card from './Card'
+import Card from '../../components/Card'
 
 export default function Menu(props){
 

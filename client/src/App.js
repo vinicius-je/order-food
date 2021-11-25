@@ -1,4 +1,4 @@
-import MenuContainer from './components/MenuContainer'
+import MenuContainer from './pages/menu_container/MenuContainer'
 
 function App() {
   return (
