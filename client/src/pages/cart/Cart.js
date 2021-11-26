@@ -24,7 +24,7 @@ export default function Cart(){
             <div className='price-box'>
                 <div className='total'>
                     <h3>Total</h3>
-                    <h3>${items.reduce(sum, 0)}</h3>
+                    <h3>${items.reduce(sum, 0).toFixed(2)}</h3>
                 </div>
                 <button>checkout</button>
             </div>

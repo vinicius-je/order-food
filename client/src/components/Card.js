@@ -24,8 +24,8 @@ export default function Card(props){
                 <img src={url} alt={name}></img>
                 <h3 className='name'>{name}</h3>
                 <p className='description'>{description}</p>
-                <h3 className='price'>$ {price}</h3>
-                <button className='order-btn' onClick={() => addItem({...props.item, quantity: 2})}>order</button>
+                <h3 className='price'>$ {price.toFixed(2)}</h3>
+                <button className='order-btn' onClick={() => addItem({...props.item, quantity: 1})}>order</button>
             </div>
         </div>
     )

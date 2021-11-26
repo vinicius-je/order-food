@@ -18,7 +18,7 @@ export default function OrderCard(props){
             <img src={url} alt={name}></img>
             <div className='bar'>
                 <span>{name}</span>
-                <span>$ {price * quantity}</span>
+                <span>$ {(price * quantity).toFixed(2)}</span>
                 <div className='counter'>
                     <button>-</button>
                     <span>{quantity}</span>

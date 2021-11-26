@@ -36,7 +36,7 @@ export default function Adicionar(){
             </div>
             <div className='input-container'>
                 <label>Price</label>
-                <input type='number' name='price' placeholder='Price' max='100' min='0' value={form.price} onChange={formChange}></input>
+                <input type='number' name='price' placeholder='Price' max='100' min='0' step='any' value={form.price} onChange={formChange}></input>
             </div>
             <button type="submit" className='btn'>OK</button>
         </form>
