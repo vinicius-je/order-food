@@ -7,7 +7,7 @@ export default function Cart(){
 
     const items = useSelector(state => state.cart);
 
-    useEffect(()=>{
+    useEffect(()=> {
         console.log(items)
     }, [items])
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import './OrderCard.css'
-import { removeClientOrder } from '../redux/cart'
+import { decrement, increment, removeClientOrder } from '../redux/cart'
 
 export default function OrderCard(props){
 
@@ -18,11 +18,11 @@ export default function OrderCard(props){
             <img src={url} alt={name}></img>
             <div className='bar'>
                 <span>{name}</span>
-                <span>$ {(price * quantity).toFixed(2)}</span>
+                <span>$ {(price).toFixed(2)}</span>
                 <div className='counter'>
-                    <button>-</button>
+                    <button onClick={() => dispatch(decrement(id))}>-</button>
                     <span>{quantity}</span>
-                    <button>+</button>
+                    <button onClick={() => dispatch(increment(id))}>+</button>
                 </div>
             </div>
         </div>
