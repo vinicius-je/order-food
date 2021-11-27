@@ -13,6 +13,7 @@ export default function Card(props){
 
     const addItem = (item) =>{
         const {_id, name, url, price, quantity} = item
+        
         const order = createOrder(_id, name, url, price, quantity)
         dispatch(getClientOrder(order))
     }
