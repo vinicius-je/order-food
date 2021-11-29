@@ -1,10 +1,18 @@
-import React from 'react' 
+import React, { useEffect, useState } from 'react' 
 import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router'
 import { createOrder } from '../model/orderModel'
 import { getClientOrder } from '../redux/cart'
 import './Card.css'
 
 export default function Card(props){
+
+    const path = useLocation()
+    const [editPage, setEditPage] = useState(false)
+
+    useEffect(() => {
+        path.pathname === '/edit' ? setEditPage(true) : setEditPage(false)
+    }, [path])
 
     const index = props.index
     const {name, url, description, price} = props.item
@@ -26,7 +34,11 @@ export default function Card(props){
                 <h3 className='name'>{name}</h3>
                 <p className='description'>{description}</p>
                 <h3 className='price'>$ {price.toFixed(2)}</h3>
-                <button className='order-btn' onClick={() => addItem({...props.item, quantity: 1})}>order</button>
+                {editPage === false ? <button className='order-btn btn' onClick={() => addItem({...props.item, quantity: 1})}>order</button> : 
+                <div className='edit-box'>
+                    <button className='btn edit-btn'>edit</button>
+                    <button className='btn delete-btn'>delete</button>
+                </div>}
             </div>
         </div>
     )

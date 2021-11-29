@@ -6,11 +6,13 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Routes,  Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import Adicionar from './pages/adicionar/Adicionar'
 import Header from './components/Header'
 
 import store from './redux/store'
-import Cart from './pages/cart/Cart';
+
+import Cart from './pages/cart';
+import Edit from './pages/edit';
+import Add from './pages/add';
 
 const rootElement = document.getElementById("root");
 render(
@@ -20,7 +22,8 @@ render(
     <Routes>
       <Route path='/' element={<App />}></Route>
       <Route path='/cart' element={<Cart/>}></Route>
-      <Route path='/adicionar' element={<Adicionar />}></Route>
+      <Route path='/add' element={<Add />}></Route>
+      <Route path='/edit' element={<Edit />}></Route>
     </Routes>
   </BrowserRouter>
   </Provider>, 

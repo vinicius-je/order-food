@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { postNewMenuItem } from '../../redux/fetchActions';
 import './style.css'
 
-export default function Adicionar(){
+export default function Add(){
 
     const [form, setForm] = useState({url: '', name: '', description: '', price: 0})
     const dispatch = useDispatch()

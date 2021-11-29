@@ -16,8 +16,8 @@ export default function Header(){
             <h3>Logo</h3>
             <ul>
                 <li><Link to='/'>menu</Link></li>
-                <li><Link to='/adicionar'>adicionar</Link></li>
-                <li>editar</li>
+                <li><Link to='/add'>adicionar</Link></li>
+                <li><Link to='/edit'>editar</Link></li>
             </ul>
             <div className='cart-icon-box'>
                 <div className='counter-circle'>{items.reduce(displayOrderQuantity, 0)}</div>
