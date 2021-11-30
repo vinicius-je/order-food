@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
-const path = require('path')
+const path = require('path');
 const menuRouter = require('./Routers/menu');
 
 require('dotenv').config();
 
-const mongoose = require('mongoose')
+// connection to mongo database
+const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_CONNECTION_URL)
     .then(console.log('mongo connected'))

@@ -1,5 +1,10 @@
 const MenuItem = require('../models/MenuItem');
 
+const sendMenuItems = async (req, res) => {
+    const items = await MenuItem.find({})
+    res.send(items)
+}
+
 const createFood = async (req, res) => {
 
     const menuItem = new MenuItem({
@@ -17,21 +22,15 @@ const createFood = async (req, res) => {
     }
 }
 
-const sendMenuItems = async (req, res) => {
-    const items = await MenuItem.find({})
-    res.send(items)
-}
-
 const editMenuItem = async (req, res) => {
-
+    let id = req.params.id
+    
     const menuItem = {
         url: req.body.url,
         name: req.body.name,
         description: req.body.description,
         price: req.body.price
     }
-
-    let id = req.params.id
 
     try {
         await MenuItem.updateOne({_id: id}, menuItem)
