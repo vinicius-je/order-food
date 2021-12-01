@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router'
 import { createOrder } from '../model/orderModel'
 import { getClientOrder } from '../redux/cart'
+import { deleteItem } from '../redux/fetchActions'
 import './Card.css'
 
 export default function Card(props){
@@ -15,7 +16,8 @@ export default function Card(props){
     }, [path])
 
     const index = props.index
-    const {name, url, description, price} = props.item
+    const {_id, name, url, description, price} = props.item
+
 
     const dispatch = useDispatch()
 
@@ -25,6 +27,7 @@ export default function Card(props){
         const order = createOrder(_id, name, url, price, quantity)
         dispatch(getClientOrder(order))
     }
+
 
     return(
         <div className='card-container'>
@@ -37,7 +40,7 @@ export default function Card(props){
                 {editPage === false ? <button className='order-btn btn' onClick={() => addItem({...props.item, quantity: 1})}>order</button> : 
                 <div className='edit-box'>
                     <button className='btn edit-btn'>edit</button>
-                    <button className='btn delete-btn'>delete</button>
+                    <button className='btn delete-btn' onClick={() => dispatch(deleteItem(_id))}>delete</button>
                 </div>}
             </div>
         </div>

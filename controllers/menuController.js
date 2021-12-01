@@ -44,8 +44,8 @@ const deleteMenuItem = async (req, res) => {
     let id = req.params.id
 
     try {
-        await MenuItem.findByIdAndDelete({_id: id})
-        res.send('ok')
+        let itemDeleted = await MenuItem.findByIdAndDelete({_id: id})
+        res.send(itemDeleted)
     } catch (error) {
         res.status(404).send(error)
     }

@@ -1,4 +1,4 @@
-import { addNewMenuItem, getMenuItems } from "../menu"
+import { addNewMenuItem, deleteMenuItem, getMenuItems } from "../menu"
 
 export const fetchMenuItems = () => {
     return dispatch => {
@@ -22,5 +22,18 @@ export const postNewMenuItem = (item) => {
             .then(doc => dispatch(addNewMenuItem(doc)))
             .catch(console.log)
 
+    }
+}
+
+export const deleteItem = (id) => {
+    return dispatch => {
+        const options = {
+            method: 'DELETE'
+        }
+
+        fetch(`/menu/delete/${id}`, options)
+            .then(res => res.json())
+            .then(doc => dispatch(deleteMenuItem(doc._id)))
+            .catch(console.log)
     }
 }
