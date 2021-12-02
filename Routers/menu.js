@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const foodControllers = require('../controllers/menuController');
+const menuControllers = require('../controllers/menuController');
 
-router.get('/items', express.json(), foodControllers.sendMenuItems);
+router.get('/items', express.json(), menuControllers.getMenuItems);
 
-router.post('/add', express.json(), foodControllers.createFood);
+router.get('/:id', express.json(), menuControllers.getMenuItemById)
 
-router.put('/edit/:id', express.json(), foodControllers.editMenuItem);
+router.post('/add', express.json(), menuControllers.createMenuItem);
 
-router.delete('/delete/:id', foodControllers.deleteMenuItem);
+router.put('/edit/:id', express.json(), menuControllers.editMenuItem);
+
+router.delete('/delete/:id', menuControllers.deleteMenuItem);
 
 module.exports = router

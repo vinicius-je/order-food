@@ -1,11 +1,17 @@
 const MenuItem = require('../models/MenuItem');
 
-const sendMenuItems = async (req, res) => {
+const getMenuItems = async (req, res) => {
     const items = await MenuItem.find({})
     res.send(items)
 }
 
-const createFood = async (req, res) => {
+const getMenuItemById = async (req, res) => {
+    let id = req.params.id
+    const item = await MenuItem.find({_id: id})
+    res.send(item)
+}
+
+const createMenuItem = async (req, res) => {
 
     const menuItem = new MenuItem({
         url: req.body.url,
@@ -51,4 +57,4 @@ const deleteMenuItem = async (req, res) => {
     }
 }
 
-module.exports = {createFood, sendMenuItems, editMenuItem, deleteMenuItem}
+module.exports = {getMenuItems, getMenuItemById, createMenuItem, editMenuItem, deleteMenuItem}
