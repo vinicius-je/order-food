@@ -39,8 +39,8 @@ const editMenuItem = async (req, res) => {
     }
 
     try {
-        await MenuItem.updateOne({_id: id}, menuItem)
-        res.send('ok')
+        let item = await MenuItem.updateOne({_id: id}, menuItem)
+        res.send(item)
     } catch (error) {
         res.status(404).send(error)
     }

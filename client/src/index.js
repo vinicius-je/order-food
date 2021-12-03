@@ -13,6 +13,7 @@ import store from './redux/store'
 import Cart from './pages/cart';
 import Edit from './pages/edit';
 import Add from './pages/add';
+import EditItem from './pages/editItem';
 
 const rootElement = document.getElementById("root");
 render(
@@ -21,7 +22,8 @@ render(
     <Header/>
     <Routes>
       <Route path='/' element={<App />}></Route>
-      <Route path='/cart' element={<Cart/>}></Route>
+      <Route path='/:id' element={<EditItem />}></Route>
+      <Route path='/cart' element={<Cart />}></Route>
       <Route path='/add' element={<Add />}></Route>
       <Route path='/edit' element={<Edit />}></Route>
     </Routes>

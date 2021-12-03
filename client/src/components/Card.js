@@ -11,6 +11,7 @@ export default function Card(props){
     const path = useLocation()
     const [editPage, setEditPage] = useState(false)
 
+
     useEffect(() => {
         path.pathname === '/edit' ? setEditPage(true) : setEditPage(false)
     }, [path])
