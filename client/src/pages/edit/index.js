@@ -1,12 +1,18 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import '../menu_container/style.css'
 
 import Card from '../../components/Card'
+import { fetchMenuItems } from '../../redux/fetchActions'
 
 export default function Edit(){
 
     const state = useSelector(state => state.menu)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchMenuItems())
+    }, [dispatch])
 
     return(
         <div className='container'>

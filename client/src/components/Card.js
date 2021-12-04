@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react' 
 import { useDispatch } from 'react-redux'
-import { useLocation } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { createOrder } from '../model/orderModel'
 import { getClientOrder } from '../redux/cart'
 import { deleteItem } from '../redux/fetchActions'
@@ -11,16 +11,15 @@ export default function Card(props){
     const path = useLocation()
     const [editPage, setEditPage] = useState(false)
 
+    const index = props.index
+    const {_id, name, url, description, price} = props.item
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
         path.pathname === '/edit' ? setEditPage(true) : setEditPage(false)
     }, [path])
-
-    const index = props.index
-    const {_id, name, url, description, price} = props.item
-
-
-    const dispatch = useDispatch()
 
     const addItem = (item) =>{
         const {_id, name, url, price, quantity} = item
@@ -40,7 +39,7 @@ export default function Card(props){
                 <h3 className='price'>$ {price.toFixed(2)}</h3>
                 {editPage === false ? <button className='order-btn btn' onClick={() => addItem({...props.item, quantity: 1})}>order</button> : 
                 <div className='edit-box'>
-                    <button className='btn edit-btn'>edit</button>
+                    <button className='btn edit-btn' onClick={() => navigate(`/${_id}`)}>edit</button>
                     <button className='btn delete-btn' onClick={() => dispatch(deleteItem(_id))}>delete</button>
                 </div>}
             </div>

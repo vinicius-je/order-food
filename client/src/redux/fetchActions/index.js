@@ -1,4 +1,4 @@
-import { addNewMenuItem, deleteMenuItem, getMenuItems } from "../menu"
+import { addNewMenuItem, deleteMenuItem, editMenuItem, getMenuItems } from "../menu"
 
 export const fetchMenuItems = () => {
     return dispatch => {
@@ -21,6 +21,21 @@ export const postNewMenuItem = (item) => {
             .then(doc => dispatch(addNewMenuItem(doc)))
             .catch(console.log)
 
+    }
+}
+
+export const editItem = (item) => {
+    return dispatch => {
+        const options = {
+            method: 'PUT',
+            headers: {'Content-Type':'application/json; charset=utf-8'},
+            body: JSON.stringify(item)
+        }
+
+        fetch(`menu/edit/${item._id}`, options)
+            .then(res => res.json())
+            .then(doc => dispatch(editMenuItem(doc)))
+            .catch(console.log)
     }
 }
 
