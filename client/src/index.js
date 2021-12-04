@@ -2,7 +2,6 @@ import React from 'react'
 import { render } from "react-dom";
 // import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Routes,  Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -14,6 +13,7 @@ import Cart from './pages/cart';
 import Edit from './pages/edit';
 import Add from './pages/add';
 import EditItem from './pages/editItem';
+import Menu from './pages/menu_container/MenuContainer';
 
 const rootElement = document.getElementById("root");
 render(
@@ -21,7 +21,7 @@ render(
   <BrowserRouter>
     <Header/>
     <Routes>
-      <Route path='/' element={<App />}></Route>
+      <Route path='/' element={<Menu />}></Route>
       <Route path='/:id' element={<EditItem />}></Route>
       <Route path='/cart' element={<Cart />}></Route>
       <Route path='/add' element={<Add />}></Route>
@@ -30,16 +30,6 @@ render(
   </BrowserRouter>
   </Provider>, 
   rootElement);
-
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <React.StrictMode>
-//       <App />
-//     </React.StrictMode>
-//   </Provider>,
-//   document.getElementById('root')
-// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
