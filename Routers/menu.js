@@ -3,13 +3,15 @@ const router = express.Router();
 
 const menuControllers = require('../controllers/menuController');
 
-router.get('/items', express.json(), menuControllers.getMenuItems);
+router.use(express.json())
 
-router.get('/:id', express.json(), menuControllers.getMenuItemById)
+router.get('/items', menuControllers.getMenuItems);
 
-router.post('/add', express.json(), menuControllers.createMenuItem);
+router.get('/:id', menuControllers.getMenuItemById)
 
-router.put('/edit/:id', express.json(), menuControllers.editMenuItem);
+router.post('/add', menuControllers.createMenuItem);
+
+router.put('/edit/:id', menuControllers.editMenuItem);
 
 router.delete('/delete/:id', menuControllers.deleteMenuItem);
 

@@ -12,7 +12,6 @@ const getMenuItemById = async (req, res) => {
 }
 
 const createMenuItem = async (req, res) => {
-
     const menuItem = new MenuItem({
         url: req.body.url,
         name: req.body.name,
