@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const menuRouter = require('./Routers/menu');
+const userRouter = require('./Routers/user')
 
 require('dotenv').config();
 
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
     })
 })
 
+app.use('/user', userRouter)
 app.use('/menu', menuRouter)
 
 app.listen(PORT, () => {
