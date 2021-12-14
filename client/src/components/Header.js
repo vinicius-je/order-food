@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import './Header.css';
 
 export default function Header(){
@@ -12,10 +12,11 @@ export default function Header(){
     }
 
     return(
+        <>
         <header>
             <h3>Logo</h3>
             <ul>
-                <li><Link to='/'>menu</Link></li>
+                <li><Link to='/menu'>menu</Link></li>
                 <li><Link to='/add'>adicionar</Link></li>
                 <li><Link to='/edit'>editar</Link></li>
             </ul>
@@ -24,5 +25,7 @@ export default function Header(){
                 <Link to='/cart'><i className='fas fa-cart-plus'></i></Link>
             </div>
         </header>
+        <Outlet/>
+        </>
     )
 }

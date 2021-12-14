@@ -1,4 +1,5 @@
 import { addNewMenuItem, deleteMenuItem, editMenuItem, getMenuItems } from "../menu"
+import { login } from "../user"
 
 export const fetchMenuItems = () => {
     return dispatch => {
@@ -47,6 +48,21 @@ export const deleteItem = (id) => {
         fetch(`menu/delete/${id}`, options)
             .then(res => res.json())
             .then(doc => dispatch(deleteMenuItem(doc._id)))
+            .catch(console.log)
+    }
+}
+
+// user actions
+export const userLogin = (data) => {
+    return dispatch => {
+        const options = {
+            method: 'POST',
+            headers: {'Content-Type':'application/json; charset=utf-8'},
+            body: JSON.stringify(data)
+        }
+        fetch('user/login', options)
+            .then(res =>  res.json())
+            .then(data => dispatch(login(data.headers.get('authorization-token'))) )
             .catch(console.log)
     }
 }

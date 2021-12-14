@@ -6,7 +6,7 @@ import './style.css'
 import Card from '../../components/Card'
 
 export default function Menu(props){
-
+    console.log('teste')
     const menuItems = useSelector(state => state.menu)
     const dispatch = useDispatch()
 

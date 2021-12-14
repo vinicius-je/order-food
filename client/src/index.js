@@ -1,6 +1,5 @@
 import React from 'react'
 import { render } from "react-dom";
-// import ReactDOM from 'react-dom'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Routes,  Route } from 'react-router-dom'
@@ -13,19 +12,23 @@ import Cart from './pages/cart';
 import Edit from './pages/edit';
 import Add from './pages/add';
 import EditItem from './pages/editItem';
-import Menu from './pages/menu_container/MenuContainer';
+import Menu from './pages/menu_container';
+import Login from './pages/login';
+
 
 const rootElement = document.getElementById("root");
 render(
   <Provider store={store}>
   <BrowserRouter>
-    <Header/>
     <Routes>
-      <Route path='/' element={<Menu />}></Route>
-      <Route path='/:id' element={<EditItem />}></Route>
-      <Route path='/cart' element={<Cart />}></Route>
-      <Route path='/add' element={<Add />}></Route>
-      <Route path='/edit' element={<Edit />}></Route>
+      <Route exact path='/' element={<Login/>}></Route>
+      <Route path='/' element={<Header />}>
+        <Route path='menu' element={<Menu />}></Route>
+        <Route path=':id' element={<EditItem />}></Route>
+        <Route path='cart' element={<Cart />}></Route>
+        <Route path='add' element={<Add />}></Route>
+        <Route path='edit' element={<Edit />}></Route>
+      </Route>
     </Routes>
   </BrowserRouter>
   </Provider>, 
