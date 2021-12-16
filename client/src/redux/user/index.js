@@ -5,5 +5,5 @@ const INITIAL_STATE = []
 export const login = createAction('USER_LOGIN')
 
 export default createReducer(INITIAL_STATE, {
-    [login.type]: (state, action) => console.log(action.payload)
+    [login.type]: (state, action) => [{...action.payload}]
 })

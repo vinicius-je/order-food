@@ -18,9 +18,8 @@ const login = async (req, res) => {
     if(!checkPassword) return res.status(400).send('Email or Password incorret')
     // create user token 
     const token = jwt.sign({id: userSelected._id, admin: userSelected.admin}, process.env.TOKEN_SECRET)
-    // send user token in header
-    res.header('authorization-token', token)
-    res.send(userSelected.admin)
+    // send user token and admin status
+    res.send({token: token, admin: userSelected.admin})
 }
 
 const register = async (req, res) => {

@@ -1,6 +1,6 @@
-import React, { useState } from  'react'
+import React, { useEffect, useState } from  'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { userLogin } from '../../redux/fetchActions'
 import './style.css'
 
@@ -8,6 +8,9 @@ export default function Login(){
 
     const [form, setForm] = useState({email: '', password: ''})
     const dispatch = useDispatch()
+    const state = useSelector(state => state.user)
+
+    const navigate = useNavigate()
 
     function formChange(e){
         setForm({...form, [e.target.name]: e.target.value})
@@ -17,13 +20,16 @@ export default function Login(){
     function onSubmit(e){
         e.preventDefault();
 
-        try {
-           dispatch(userLogin(form))
-        } catch (error) {
-            console.log(error)   
-        }
+        dispatch(userLogin(form))
+        
         setForm({email: '', password: ''})
     }
+
+    useEffect(() => {
+        if(state[0] !== undefined){
+            navigate('/menu')
+        }
+    }, [state])
 
     return(
         <div className='login-container'>

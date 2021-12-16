@@ -61,8 +61,8 @@ export const userLogin = (data) => {
             body: JSON.stringify(data)
         }
         fetch('user/login', options)
-            .then(res =>  res.json())
-            .then(data => dispatch(login(data.headers.get('authorization-token'))) )
+            .then(res => res.json())
+            .then(data => dispatch(login(data)))
             .catch(console.log)
     }
 }
