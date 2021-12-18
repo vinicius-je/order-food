@@ -1,0 +1,14 @@
+form{
+    width: 400px;
+    margin: 150px auto;
+    padding: 80px 20px;
+    border: 1px solid black;
+}
+
+.register-btn-container{
+    text-align: center;
+}
+
+.register-btn{
+    padding: 8px 20px;
+}

@@ -66,3 +66,17 @@ export const userLogin = (data) => {
             .catch(console.log)
     }
 }
+
+export const userRegister = (data) => {
+    return dispatch => {
+        const options = {
+            method: 'POST',
+            headers: {'Content-Type':'application/json; charset=utf-8'},
+            body: JSON.stringify(data)
+        }
+        fetch('/user/register', options)
+            .then(res => res.json())
+            .then(data => dispatch(login(data)))
+            .catch(console.log)
+    }
+}

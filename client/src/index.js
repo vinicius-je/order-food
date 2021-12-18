@@ -4,7 +4,6 @@ import './index.css'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Routes,  Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import Header from './components/Header'
 
 import store from './redux/store'
 
@@ -16,6 +15,7 @@ import Menu from './pages/menu_container';
 import Login from './pages/login';
 import PrivateRoute from './routes/privateRoute';
 import AdminRoute from './routes/adminRoute';
+import Register from './pages/register';
 
 
 const rootElement = document.getElementById("root");
@@ -23,7 +23,8 @@ render(
   <Provider store={store}>
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Login/>}></Route>
+      <Route path='/' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}/>
       <Route path='/' element={<PrivateRoute/>}>
         <Route path='menu' element={<Menu/>}/>
         <Route path='cart' element={<Cart />}/>

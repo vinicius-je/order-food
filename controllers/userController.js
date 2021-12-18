@@ -35,8 +35,10 @@ const register = async (req, res) => {
     })
 
     try {
-        let user = await newUser.save()
-        res.send('ok')
+        const user = await newUser.save()
+        const userSelected = await User.findOne({email: user.email})
+        const token = jwt.sign({id: userSelected._id, admin: userSelected.admin}, process.env.TOKEN_SECRET)
+        res.send({token: token, admin: userSelected.admin})
     } catch (error) {
         res.send(error)
     }
