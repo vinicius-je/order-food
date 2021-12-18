@@ -14,14 +14,14 @@ export default function EditItem(){
 
     useEffect(() => {
         let paramsID = params.pathname.substring(1)
-        
+
         state.forEach(element => {
             if(element._id === paramsID){
                 const {_id, url, name, description, price} = element
                 setForm({_id, url, name, description, price})
             }
         });
-    }, [state, params])
+    }, [state, params]) 
 
     function formChange(e){
         setForm({...form, [e.target.name]: e.target.value})

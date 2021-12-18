@@ -14,7 +14,6 @@ export default function Login(){
 
     function formChange(e){
         setForm({...form, [e.target.name]: e.target.value})
-        console.log(form)
     }
 
     function onSubmit(e){

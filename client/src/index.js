@@ -14,7 +14,8 @@ import Add from './pages/add';
 import EditItem from './pages/editItem';
 import Menu from './pages/menu_container';
 import Login from './pages/login';
-import PrivateRoute from './pages/privateRoute';
+import PrivateRoute from './routes/privateRoute';
+import AdminRoute from './routes/adminRoute';
 
 
 const rootElement = document.getElementById("root");
@@ -22,13 +23,15 @@ render(
   <Provider store={store}>
   <BrowserRouter>
     <Routes>
-      <Route exact path='/' element={<Login/>}></Route>
+      <Route path='/' element={<Login/>}></Route>
       <Route path='/' element={<PrivateRoute/>}>
         <Route path='menu' element={<Menu/>}/>
         <Route path='cart' element={<Cart />}/>
-        <Route path='add' element={<Add />}/>
-        <Route path='edit' element={<Edit />}/>
-        <Route path=':id' element={<EditItem/>}/>
+        <Route path='/' element={<AdminRoute/>}>
+          <Route path='add' element={<Add />}/>
+          <Route path='edit' element={<Edit />}/>
+          <Route path=':id' element={<EditItem/>}/>
+        </Route>
       </Route>
     </Routes>
   </BrowserRouter>

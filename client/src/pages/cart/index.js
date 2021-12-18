@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react' 
+import React from 'react' 
 import { useSelector } from 'react-redux'
 import OrderCard from '../../components/OrderCard'
 import './style.css'
@@ -6,10 +6,6 @@ import './style.css'
 export default function Cart(){
 
     const items = useSelector(state => state.cart);
-
-    useEffect(()=> {
-        console.log(items)
-    }, [items])
 
     const sum = (total, item) =>{
         return total += item.value

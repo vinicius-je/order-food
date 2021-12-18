@@ -6,17 +6,12 @@ import './style.css'
 import Card from '../../components/Card'
 
 export default function Menu(props){
-    console.log('teste')
     const menuItems = useSelector(state => state.menu)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchMenuItems())
     }, [ dispatch ])
-
-    useEffect(() => {
-        console.log(menuItems)
-    }, [ menuItems ])
 
     return(
         <div className='container'>

@@ -7,10 +7,10 @@ export default function PrivateRoute({children}){
     const state = useSelector(state => state.user)
     
     return (
-        <div>
+        <>
             <Header/>
             {state[0] !== undefined ? children : <Navigate to='/'/>}
-        </div>
+        </>
     )
         
 }
