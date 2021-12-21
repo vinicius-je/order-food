@@ -19,7 +19,7 @@ const login = async (req, res) => {
     // create user token 
     const token = jwt.sign({id: userSelected._id, admin: userSelected.admin}, process.env.TOKEN_SECRET)
     // send user token and admin status
-    res.send({token: token, admin: userSelected.admin})
+    res.send({token: token})
 }
 
 const register = async (req, res) => {
