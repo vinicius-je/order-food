@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import '../menu_container/style.css'
 
 import Card from '../../components/Card'
-import { fetchMenuItems } from '../../redux/fetchActions'
+import { fetchMenuItems } from '../../redux/thunk'
 
 export default function Edit(){
 

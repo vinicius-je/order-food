@@ -1,7 +1,7 @@
 import React, { useState } from 'react' 
 import { useDispatch } from 'react-redux'
 import Form from '../../components/Form';
-import { postNewMenuItem } from '../../redux/fetchActions';
+import { postNewMenuItem } from '../../redux/thunk';
 
 export default function Add(){
 

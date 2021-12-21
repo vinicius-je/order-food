@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
 import Form from '../../components/Form'
-import { editItem } from '../../redux/fetchActions'
+import { editItem } from '../../redux/thunk'
 
 export default function EditItem(){ 
     const state = useSelector(state => state.menu)

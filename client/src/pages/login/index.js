@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from  'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { userLogin } from '../../redux/fetchActions'
+import { userAuth } from '../../redux/thunk'
 import './style.css'
 
 export default function Login(){
@@ -19,10 +19,11 @@ export default function Login(){
     function onSubmit(e){
         e.preventDefault();
 
-        dispatch(userLogin(form))
+        dispatch(userAuth(form, true))
         
         setForm({email: '', password: ''})
     }
+
 
     useEffect(() => {
         if(state[0] !== undefined){

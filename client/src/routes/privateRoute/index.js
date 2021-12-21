@@ -1,15 +1,23 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { Navigate } from 'react-router'
 import Header from '../../components/Header'
+import { userLogin } from '../../redux/user';
 
 export default function PrivateRoute({children}){
-    const state = useSelector(state => state.user)
+    const dispatch = useDispatch()
+
+    const token = JSON.parse(localStorage.getItem('token'));
+
+    useEffect(() => {
+        if(token !== null){ dispatch(userLogin(token)) }
+    }, [])
+
     
     return (
         <>
             <Header/>
-            {state[0] !== undefined ? children : <Navigate to='/'/>}
+            {token !== null ? children : <Navigate to='/'/>}
         </>
     )
         

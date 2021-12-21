@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import './style.css'
-import { userRegister } from '../../redux/fetchActions'
 import { useNavigate } from 'react-router'
+import { userAuth } from '../../redux/thunk'
 
 export default function Register(){
     const [form, setForm] = useState({email: '', password: ''})
@@ -31,7 +31,7 @@ export default function Register(){
         e.preventDefault()
 
         if(confirmPwd === form.password){
-            dispatch(userRegister(form))
+            dispatch(userAuth(form, false))
         }else{
             alert("password don't match, try again")
         }

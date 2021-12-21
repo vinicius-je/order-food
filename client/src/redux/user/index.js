@@ -2,8 +2,8 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = []
 
-export const login = createAction('USER_LOGIN')
+export const userLogin = createAction('USER_LOGIN')
 
 export default createReducer(INITIAL_STATE, {
-    [login.type]: (state, action) => [{...action.payload}]
+    [userLogin.type]: (state, action) => [{...action.payload}]
 })

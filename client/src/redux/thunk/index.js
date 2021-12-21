@@ -1,9 +1,17 @@
 import { addNewMenuItem, deleteMenuItem, editMenuItem, getMenuItems } from "../menu"
-import { login } from "../user"
+import { userLogin } from "../user"
+
+const getToken = () => {
+    const {token} = JSON.parse(localStorage.getItem('token'))
+    return token;
+}
 
 export const fetchMenuItems = () => {
     return dispatch => {
-        fetch('menu/items')
+        const options = {
+            headers: {'authorization-token': getToken()}
+        }
+        fetch('menu/items', options)
             .then(res => res.json())
             .then(doc => dispatch(getMenuItems(doc)))
             .catch(console.log)
@@ -14,7 +22,10 @@ export const postNewMenuItem = (item) => {
     return dispatch => {
         const options = {
             method: 'POST',
-            headers: {'Content-Type':'application/json; charset=utf-8'},
+            headers: {
+                'authorization-token': getToken(),
+                'Content-Type':'application/json; charset=utf-8'
+            },
             body: JSON.stringify(item)
         }
         fetch('menu/add', options)
@@ -53,30 +64,22 @@ export const deleteItem = (id) => {
 }
 
 // user actions
-export const userLogin = (data) => {
-    return dispatch => {
-        const options = {
-            method: 'POST',
-            headers: {'Content-Type':'application/json; charset=utf-8'},
-            body: JSON.stringify(data)
-        }
-        fetch('user/login', options)
-            .then(res => res.json())
-            .then(data => dispatch(login(data)))
-            .catch(console.log)
-    }
-}
+export const userAuth = (data, login) => {
 
-export const userRegister = (data) => {
+    const URL = login ? 'user/login' : 'user/register'
+
     return dispatch => {
         const options = {
             method: 'POST',
             headers: {'Content-Type':'application/json; charset=utf-8'},
             body: JSON.stringify(data)
         }
-        fetch('/user/register', options)
+        fetch(URL , options)
             .then(res => res.json())
-            .then(data => dispatch(login(data)))
+            .then(data => {
+                dispatch(userLogin(data));
+                localStorage.setItem('token', JSON.stringify(data));
+            })
             .catch(console.log)
     }
 }

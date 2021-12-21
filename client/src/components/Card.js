@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router'
 import { createOrder } from '../model/orderModel'
 import { getClientOrder } from '../redux/cart'
-import { deleteItem } from '../redux/fetchActions'
+import { deleteItem } from '../redux/thunk'
 import './Card.css'
 
 export default function Card(props){
