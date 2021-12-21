@@ -2,8 +2,8 @@ import { addNewMenuItem, deleteMenuItem, editMenuItem, getMenuItems } from "../m
 import { userLogin } from "../user"
 
 const getToken = () => {
-    const {token} = JSON.parse(localStorage.getItem('token'))
-    return token;
+    const user = JSON.parse(localStorage.getItem('token'));
+    return user !== null ? user.token : user;
 }
 
 export const fetchMenuItems = () => {
@@ -40,10 +40,12 @@ export const editItem = (item) => {
     return dispatch => {
         const options = {
             method: 'PUT',
-            headers: {'Content-Type':'application/json; charset=utf-8'},
+            headers: {
+                'authorization-token': getToken(),
+                'Content-Type':'application/json; charset=utf-8'
+            },
             body: JSON.stringify(item)
         }
-
         fetch(`menu/edit/${item._id}`, options)
             .then(res => res.json())
             .then(doc => dispatch(editMenuItem(doc)))
@@ -54,7 +56,10 @@ export const editItem = (item) => {
 export const deleteItem = (id) => {
     return dispatch => {
         const options = {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'authorization-token': getToken(),
+            },
         }
         fetch(`menu/delete/${id}`, options)
             .then(res => res.json())

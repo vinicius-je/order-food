@@ -29,7 +29,7 @@ export default function Login(){
         if(state[0] !== undefined){
             navigate('/menu')
         }
-    }, [state])
+    }, [state, navigate])
 
     return(
         <div className='login-container'>
