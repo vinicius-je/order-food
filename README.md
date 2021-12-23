@@ -11,7 +11,7 @@ Criar um sistema para relizar pedidos de comida
 - [x] Carrinho de pedidos
 - [x] Autenticação de usuário
 - [x] Registro de usuário
-- [ ] Encerrar a seção
+- [x] Encerrar a seção
 - [ ] Confirmar o pedido
 - [ ] Deploy do projeto
 
