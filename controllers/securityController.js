@@ -8,7 +8,6 @@ const userAuth = (req, res, next) => {
     try {
         const token = jwt.verify(userToken, process.env.TOKEN_SECRET);
         req.user = token;
-        console.log(token);
         next()
     } catch (error) {
         res.status(401).send('acess denied');

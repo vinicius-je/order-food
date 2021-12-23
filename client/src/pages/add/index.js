@@ -5,19 +5,18 @@ import { postNewMenuItem } from '../../redux/thunk';
 
 export default function Add(){
 
-    const [form, setForm] = useState({url: '', name: '', description: '', price: 0})
-    const dispatch = useDispatch()
+    const [form, setForm] = useState({url: '', name: '', description: '', price: 0});
+    const dispatch = useDispatch();
 
     function formChange(e){
-        setForm({...form, [e.target.name]: e.target.value})
+        setForm({...form, [e.target.name]: e.target.value});
     }
 
     function onSubmit(e){
         e.preventDefault();
-        console.log(form);
 
-        dispatch(postNewMenuItem(form))
-        setForm({url: '', name: '', description: '', price: 0})
+        dispatch(postNewMenuItem(form));
+        setForm({url: '', name: '', description: '', price: 0});
     }
 
     return(

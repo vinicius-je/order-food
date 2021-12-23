@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode'
 export default function AdminRoute(){
 
     const token = JSON.parse(localStorage.getItem('token'));
-    const user = jwt_decode(token.token);
+    const user = token !== null ? jwt_decode(token.token) : false;
 
     return(
         <>  

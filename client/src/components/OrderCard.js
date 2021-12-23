@@ -5,11 +5,11 @@ import { decrement, increment, removeClientOrder } from '../redux/cart'
 
 export default function OrderCard(props){
 
-    const {id, name, price, quantity, url} = props.item
-    const dispatch = useDispatch()
+    const {id, name, price, quantity, url} = props.item;
+    const dispatch = useDispatch();
 
     const removeOrder = (id) => {
-        dispatch(removeClientOrder(id))
+        dispatch(removeClientOrder(id));
     }
 
     return(

@@ -7,11 +7,11 @@ import { fetchMenuItems } from '../../redux/thunk'
 
 export default function Edit(){
 
-    const state = useSelector(state => state.menu)
-    const dispatch = useDispatch()
+    const state = useSelector(state => state.menu);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchMenuItems())
+        dispatch(fetchMenuItems());
     }, [dispatch])
 
     return(

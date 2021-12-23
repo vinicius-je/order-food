@@ -6,29 +6,25 @@ import './style.css'
 
 export default function Login(){
 
-    const [form, setForm] = useState({email: '', password: ''})
-    const dispatch = useDispatch()
-    const state = useSelector(state => state.user)
+    const [form, setForm] = useState({email: '', password: ''});
+    const dispatch = useDispatch();
+    const state = useSelector(state => state.user);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function formChange(e){
-        setForm({...form, [e.target.name]: e.target.value})
+        setForm({...form, [e.target.name]: e.target.value});
     }
 
     function onSubmit(e){
         e.preventDefault();
-
-        dispatch(userAuth(form, true))
-        
-        setForm({email: '', password: ''})
+        dispatch(userAuth(form, true));
+        setForm({email: '', password: ''});
     }
 
 
     useEffect(() => {
-        if(state[0] !== undefined){
-            navigate('/menu')
-        }
+        if(state[0] !== undefined){ navigate('/menu') }
     }, [state, navigate])
 
     return(

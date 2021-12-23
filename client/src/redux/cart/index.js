@@ -1,28 +1,28 @@
-import { createAction, createReducer } from "@reduxjs/toolkit";
+import { createAction, createReducer } from "@reduxjs/toolkit"
 
-const CLIENT_ORDER = []
+const CLIENT_ORDER = [];
 
-export const getClientOrder = createAction('GET_CLIENT_ORDER')
-export const removeClientOrder = createAction('REMOVE_CLIENT_ORDER')
+export const getClientOrder = createAction('GET_CLIENT_ORDER');
+export const removeClientOrder = createAction('REMOVE_CLIENT_ORDER');
 
-export const increment = createAction('INCREMENT')
-export const decrement = createAction('DECREMENT')
+export const increment = createAction('INCREMENT');
+export const decrement = createAction('DECREMENT');
 
 const orderExist = (state, payload) => {
-    return state.find(item => item.id === payload.id)
+    return state.find(item => item.id === payload.id);
 }
 
 const counter = (state, payload ,type) => {
     state.forEach(item => {
         if(item.id === payload){
             if(type === 'INCREMENT'){
-                item.quantity += 1
-                item.value = item.quantity * item.price
+                item.quantity += 1;
+                item.value = item.quantity * item.price;
             }else if(item.quantity === 1){
-                return item.quantity
+                return item.quantity;
             }else{
-                item.quantity -= 1
-                item.value = item.quantity * item.price
+                item.quantity -= 1;
+                item.value = item.quantity * item.price;
             }
         }
     })

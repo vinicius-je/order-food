@@ -8,24 +8,23 @@ import './Card.css'
 
 export default function Card(props){
 
-    const path = useLocation()
-    const [editPage, setEditPage] = useState(false)
+    const path = useLocation();
+    const [editPage, setEditPage] = useState(false);
 
-    const index = props.index
-    const {_id, name, url, description, price} = props.item
+    const index = props.index;
+    const {_id, name, url, description, price} = props.item;
 
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        path.pathname === '/edit' ? setEditPage(true) : setEditPage(false)
+        path.pathname === '/edit' ? setEditPage(true) : setEditPage(false);
     }, [path])
 
     const addItem = (item) =>{
-        const {_id, name, url, price, quantity} = item
-        
-        const order = createOrder(_id, name, url, price, quantity)
-        dispatch(getClientOrder(order))
+        const {_id, name, url, price, quantity} = item;
+        const order = createOrder(_id, name, url, price, quantity);
+        dispatch(getClientOrder(order));
     }
 
 
