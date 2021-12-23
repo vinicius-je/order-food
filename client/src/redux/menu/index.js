@@ -1,11 +1,11 @@
 import { createAction, createReducer } from '@reduxjs/toolkit'
 
-const INITIAL_STATE = []
+const INITIAL_STATE = [];
 
-export const getMenuItems = createAction('GET_MENU_ITEMS')
-export const addNewMenuItem = createAction('ADD_MENU_ITEM')
-export const deleteMenuItem = createAction('DELETE_MENU_ITEM')
-export const editMenuItem = createAction('EDIT_MENU_ITEM')
+export const getMenuItems = createAction('GET_MENU_ITEMS');
+export const addNewMenuItem = createAction('ADD_MENU_ITEM');
+export const deleteMenuItem = createAction('DELETE_MENU_ITEM');
+export const editMenuItem = createAction('EDIT_MENU_ITEM');
 
 
 export default createReducer(INITIAL_STATE, {

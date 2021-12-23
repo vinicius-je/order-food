@@ -1,39 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import './style.css'
-import { userRegister } from '../../redux/fetchActions'
 import { useNavigate } from 'react-router'
+import { userAuth } from '../../redux/thunk'
 
 export default function Register(){
-    const [form, setForm] = useState({email: '', password: ''})
-    const [confirmPwd, setConfirmPwd] = useState('')
+    const [form, setForm] = useState({email: '', password: ''});
+    const [confirmPwd, setConfirmPwd] = useState('');
 
-    const state = useSelector(state => state.user)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const state = useSelector(state => state.user);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(state)
         if(state[0] !== undefined){
-            navigate('/menu')
+            navigate('/menu');
         }
     }, [state])
 
     function formChange(e){
         if (e.target.name === 'confirm-pwd'){
-            setConfirmPwd(e.target.value)
+            setConfirmPwd(e.target.value);
         }else{
-            setForm({...form, [e.target.name]: e.target.value})
+            setForm({...form, [e.target.name]: e.target.value});
         }
     }
 
     function onSubmit(e){
-        e.preventDefault()
+        e.preventDefault();
 
         if(confirmPwd === form.password){
-            dispatch(userRegister(form))
+            dispatch(userAuth(form, false));
         }else{
-            alert("password don't match, try again")
+            alert("password don't match, try again");
         }
 
         setForm({email: '', password: ''})

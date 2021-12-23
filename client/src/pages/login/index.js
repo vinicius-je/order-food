@@ -1,34 +1,31 @@
 import React, { useEffect, useState } from  'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { userLogin } from '../../redux/fetchActions'
+import { userAuth } from '../../redux/thunk'
 import './style.css'
 
 export default function Login(){
 
-    const [form, setForm] = useState({email: '', password: ''})
-    const dispatch = useDispatch()
-    const state = useSelector(state => state.user)
+    const [form, setForm] = useState({email: '', password: ''});
+    const dispatch = useDispatch();
+    const state = useSelector(state => state.user);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function formChange(e){
-        setForm({...form, [e.target.name]: e.target.value})
+        setForm({...form, [e.target.name]: e.target.value});
     }
 
     function onSubmit(e){
         e.preventDefault();
-
-        dispatch(userLogin(form))
-        
-        setForm({email: '', password: ''})
+        dispatch(userAuth(form, true));
+        setForm({email: '', password: ''});
     }
 
+
     useEffect(() => {
-        if(state[0] !== undefined){
-            navigate('/menu')
-        }
-    }, [state])
+        if(state[0] !== undefined){ navigate('/menu') }
+    }, [state, navigate])
 
     return(
         <div className='login-container'>

@@ -8,7 +8,7 @@ export default function Cart(){
     const items = useSelector(state => state.cart);
 
     const sum = (total, item) =>{
-        return total += item.value
+        return total += item.value;
     }
 
     return(

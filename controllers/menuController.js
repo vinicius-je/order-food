@@ -1,14 +1,14 @@
 const MenuItem = require('../models/MenuItem');
 
 const getMenuItems = async (req, res) => {
-    const items = await MenuItem.find({})
-    res.send(items)
+    const items = await MenuItem.find({});
+    res.send(items);
 }
 
 const getMenuItemById = async (req, res) => {
     let id = req.params.id
-    const item = await MenuItem.find({_id: id})
-    res.send(item)
+    const item = await MenuItem.find({_id: id});
+    res.send(item);
 }
 
 const createMenuItem = async (req, res) => {
@@ -20,15 +20,15 @@ const createMenuItem = async (req, res) => {
     })
 
     try {
-        let savedMenuItem = await menuItem.save()
-        res.send(savedMenuItem)
+        let savedMenuItem = await menuItem.save();
+        res.send(savedMenuItem);
     } catch (error) {
-        res.status(404).send(error)
+        res.status(404).send(error);
     }
 }
 
 const editMenuItem = async (req, res) => {
-    let id = req.params.id
+    let id = req.params.id;
     
     const menuItem = {
         url: req.body.url,
@@ -38,21 +38,21 @@ const editMenuItem = async (req, res) => {
     }
 
     try {
-        let item = await MenuItem.updateOne({_id: id}, menuItem)
-        res.send(item)
+        let item = await MenuItem.updateOne({_id: id}, menuItem);
+        res.send(item);
     } catch (error) {
-        res.status(404).send(error)
+        res.status(404).send(error);
     }
 }
 
 const deleteMenuItem = async (req, res) => {
-    let id = req.params.id
+    let id = req.params.id;
 
     try {
-        let itemDeleted = await MenuItem.findByIdAndDelete({_id: id})
-        res.send(itemDeleted)
+        let itemDeleted = await MenuItem.findByIdAndDelete({_id: id});
+        res.send(itemDeleted);
     } catch (error) {
-        res.status(404).send(error)
+        res.status(404).send(error);
     }
 }
 
