@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 
 import store from './redux/store'
 
-import Cart from './pages/cart'
 import Edit from './pages/edit'
 import Add from './pages/add'
 import EditItem from './pages/editItem'
@@ -27,7 +26,6 @@ render(
       <Route path='/register' element={<Register/>}/>
       <Route path='' element={<PrivateRoute/>}>
         <Route path='menu' element={<Menu/>}/>
-        <Route path='cart' element={<Cart/>}/>
         <Route path='' element={<AdminRoute/>}>
           <Route path='add' element={<Add/>}/>
           <Route path='edit' element={<Edit/>}/>

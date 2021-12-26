@@ -1,0 +1,58 @@
+.sidebar-container{
+    width: 320px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: white;
+    padding: 10px 0 10px 10px;
+    transform: translateX(105%);
+    transition: .6s ease-in-out;
+    box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.show-cart{
+    transform: translateX(0);
+}
+
+.orders-container{
+    padding-right: 5px;
+    width: 100%;
+    height: 70%;
+    overflow-y: auto;
+}
+
+.close-icon{
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.cartSideBar-footer{ 
+    width: 100%;
+    padding: 0 10px;
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.checkout-btn{
+    width: 100%;
+    height: 40px;
+    font-size: 1.125rem;
+    border: 1px solid #c4c4c4;
+    cursor: pointer;
+}
+
+.checkout-btn:hover{
+    background-color: #bebebe;
+}

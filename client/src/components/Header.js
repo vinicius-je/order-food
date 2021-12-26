@@ -2,18 +2,20 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Outlet } from 'react-router-dom'
 import { userLogout } from '../redux/user'
+import CartSideBar from './CartSideBar'
+import { toggleCartSideBar } from '../redux/cart'
 import './Header.css'
 
 export default function Header(){
 
-    const items = useSelector(state => state.cart);
+    const orders = useSelector(state => state.orders);
 
     const dispatch = useDispatch();
 
     const displayOrderQuantity = (total, item) => {
         return total += item.quantity;
     }
-
+    // clean localstorage and set user redux to empy array
     const logout = () => {
         localStorage.removeItem('token');
         dispatch(userLogout([]));
@@ -30,9 +32,10 @@ export default function Header(){
                 <li><Link onClick={logout} to='/'>sair</Link></li>
             </ul>
             <div className='cart-icon-box'>
-                <div className='counter-circle'>{items.reduce(displayOrderQuantity, 0)}</div>
-                <Link to='/cart'><i className='fas fa-cart-plus'></i></Link>
+                <div className='counter-circle'>{orders.reduce(displayOrderQuantity, 0)}</div>
+                <i className='fas fa-cart-plus' onClick={() => dispatch(toggleCartSideBar())}></i>
             </div>
+            <CartSideBar/>
         </header>
         <Outlet/>
         </>

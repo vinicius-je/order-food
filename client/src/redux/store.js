@@ -1,13 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import menuReducer from './menu'
-import cartReducer from './cart'
+import ordersReducer from './orders'
 import userReducer from './user'
+import cartReducer from './cart'
 
 export default configureStore({
     reducer:{
         menu: menuReducer,
-        cart: cartReducer,
-        user: userReducer
+        orders: ordersReducer,
+        user: userReducer,
+        cart: cartReducer
     }
 })

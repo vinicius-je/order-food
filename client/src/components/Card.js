@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router'
 import { createOrder } from '../model/orderModel'
-import { getClientOrder } from '../redux/cart'
+import { getClientOrder } from '../redux/orders'
 import { deleteItem } from '../redux/thunk'
+import { showCartSideBar } from '../redux/cart'
 import './Card.css'
 
 export default function Card(props){
@@ -36,7 +37,7 @@ export default function Card(props){
                 <h3 className='name'>{name}</h3>
                 <p className='description'>{description}</p>
                 <h3 className='price'>$ {price.toFixed(2)}</h3>
-                {editPage === false ? <button className='order-btn btn' onClick={() => addItem({...props.item, quantity: 1})}>order</button> : 
+                {editPage === false ? <button className='order-btn btn' onClick={() => {addItem({...props.item, quantity: 1}); dispatch(showCartSideBar(true))}}>order</button> : 
                 <div className='edit-box'>
                     <button className='btn edit-btn' onClick={() => navigate(`/${_id}`)}>edit</button>
                     <button className='btn delete-btn' onClick={() => dispatch(deleteItem(_id))}>delete</button>

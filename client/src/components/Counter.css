@@ -1,0 +1,23 @@
+.counter{
+    border: 1px solid #b8b6b6;
+    overflow: hidden;
+    border-radius: 2px;
+    width: 70px;
+    height: 28px;
+    display: flex;
+}
+
+.counter-btn, .counter-display{
+    width: 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-btn{
+    background: #c4c4c4;
+    border: none;
+    cursor: pointer;
+}
+
