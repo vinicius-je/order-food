@@ -40,17 +40,18 @@ export default function Register(){
     }
 
     return(
-        <>
+        <div className='register-container'>
             <form onSubmit={onSubmit}>
-                <div className='input-container'>
+                <h2 className='register-title'>Register</h2>
+                <div className='register-input-container'>
                     <label>Email</label>
                     <input type='text' name='email' placeholder='Email' value={form.email} onChange={formChange}></input>
                 </div>
-                <div className='input-container'>
+                <div className='register-input-container'>
                     <label>Password</label>
                     <input type='password' name='password' placeholder='Password' value={form.password} onChange={formChange}></input>
                 </div>
-                <div className='input-container'>
+                <div className='register-input-container'>
                     <label>Confirm Password</label>
                     <input type='password' name='confirm-pwd' placeholder='Confirm Password' value={confirmPwd} onChange={formChange}></input>
                 </div>
@@ -58,6 +59,6 @@ export default function Register(){
                     <button type='submit' className='register-btn'>Register</button>
                 </div>
             </form>
-        </>
+        </div>
     )
 }

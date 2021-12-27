@@ -6,19 +6,19 @@ export default function Form(props){
 
     return(
         <form className='form-container' onSubmit={onSubmit}>
-            <div className='input-container'>
+            <div className='form-input-container'>
                 <label>Image Url</label>
                 <input name='url' placeholder='Image URL' value={form.url} onChange={formChange} required></input>
             </div>
-            <div className='input-container'>
+            <div className='form-input-container'>
                 <label>Name</label>
                 <input name='name' placeholder='Food name' value={form.name} onChange={formChange} minLength='3' maxLength='30' required></input>
             </div>
-            <div className='input-container'>
+            <div className='form-input-container'>
                 <label>Description</label>
                 <input name='description' placeholder='Description' value={form.description} onChange={formChange} minLength='3' maxLength='100' required></input>
             </div>
-            <div className='input-container'>
+            <div className='form-input-container'>
                 <label>Price</label>
                 <input type='number' name='price' placeholder='Price' max='100' min='0' step='any' value={form.price} onChange={formChange} required></input>
             </div>

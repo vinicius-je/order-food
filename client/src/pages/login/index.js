@@ -30,18 +30,21 @@ export default function Login(){
     return(
         <div className='login-container'>
             <form onSubmit={onSubmit}>
-                <div className='input-container'>
+                <h2 className='login-title'>Login</h2>
+                <div className='login-input-container'>
                     <label>Email</label>
                     <input type='text' name='email' placeholder='email' minLength='3' maxLength='100' value={form.email} onChange={formChange}></input>
                 </div>
-                <div className='input-container'>
+                <div className='login-input-container'>
                     <label>Password</label>
                     <input type='password' name='password' placeholder='password' minLength='6' maxLength='100' value={form.password} onChange={formChange}></input>
+                </div>
+                <div className='login-link-container'>
+                    <Link className='register-link' to='/register'>Don’t have an account? Register</Link>
                 </div>
                 <div className='login-btn-container'>
                     <button type='submit' className='login-btn'>Login</button>
                 </div>
-                <Link to='/register'>Register</Link>
             </form>
         </div>
     )

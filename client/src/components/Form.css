@@ -5,14 +5,14 @@
     text-align: center;
 }
 
-.input-container{
+.form-input-container{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
     text-align: left;
 }
 
-.input-container input{
+.form-input-container input{
     padding: 8px 5px;
     margin-top: 5px;
     border: 1px solid black;
