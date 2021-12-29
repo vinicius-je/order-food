@@ -5,8 +5,8 @@ import Form from '../../components/Form'
 import { editItem } from '../../redux/thunk'
 
 export default function EditItem(){ 
-    const state = useSelector(state => state.menu);
 
+    const state = useSelector(state => state.menu);
     const [form, setForm] = useState({url: '', name: '', description: '', price: 0});
 
     const params = useLocation();
@@ -35,7 +35,7 @@ export default function EditItem(){
 
     return(
         <div>
-            {form !== '' ? <Form onSubmit={onSubmit} form={form} formChange={formChange}></Form> : 'carregando' }
+            {form !== '' ? <Form onSubmit={onSubmit} form={form} formChange={formChange} btn_value='Edit'/> : 'carregando' }
         </div>
     )
 }

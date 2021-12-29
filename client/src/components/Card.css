@@ -18,12 +18,13 @@
 .description{
     margin: 10px 0;
     font-size: .875rem;
-    text-align: justify;
+    text-align: center;
 }
 
 .btn{
     margin-top: 10px;
     border: none;
+    cursor: pointer;
 }
 
 .order-btn{
@@ -36,21 +37,23 @@
     background-color: #bebebe;
 }
 
-.edit-box{
+.edit-btn-container{
     display: flex;
     justify-content: space-between;
 }
 
-.edit-box button{
+.edit-btn-container button{
     width: 45%;
 }
 
 .delete-btn{
     background-color: red;
     color: white;
+    padding: 5px 0;
 }
 
 .edit-btn{
     background-color: #121212;
     color: white;
+    padding: 5px 0;
 }

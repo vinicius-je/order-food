@@ -24,12 +24,12 @@ export default function Header(){
     return(
         <>
         <header>
-            <h3>Logo</h3>
-            <ul>
-                <li><Link to='menu'>menu</Link></li>
-                <li><Link to='add'>adicionar</Link></li>
-                <li><Link to='edit'>editar</Link></li>
-                <li><Link onClick={logout} to='/'>sair</Link></li>
+            <h3 className='logo'>Logo</h3>
+            <ul className='navLinks'>
+                <Link to='menu'><li className='link-btn'>menu</li></Link>
+                <Link to='add'><li className='link-btn'>add</li></Link>
+                <Link to='edit'><li className='link-btn'>edit</li></Link>
+                <Link to='/' onClick={logout}><li className='link-btn'>logout</li></Link>
             </ul>
             <div className='cart-icon-box'>
                 <div className='counter-circle'>{orders.reduce(displayOrderQuantity, 0)}</div>

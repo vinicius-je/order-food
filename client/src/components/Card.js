@@ -28,7 +28,6 @@ export default function Card(props){
         dispatch(getClientOrder(order));
     }
 
-
     return(
         <div className='card-container'>
             <div className='card'>
@@ -38,7 +37,7 @@ export default function Card(props){
                 <p className='description'>{description}</p>
                 <h3 className='price'>$ {price.toFixed(2)}</h3>
                 {editPage === false ? <button className='order-btn btn' onClick={() => {addItem({...props.item, quantity: 1}); dispatch(showCartSideBar(true))}}>order</button> : 
-                <div className='edit-box'>
+                <div className='edit-btn-container'>
                     <button className='btn edit-btn' onClick={() => navigate(`/${_id}`)}>edit</button>
                     <button className='btn delete-btn' onClick={() => dispatch(deleteItem(_id))}>delete</button>
                 </div>}

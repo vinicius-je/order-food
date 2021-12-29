@@ -20,6 +20,6 @@ export default function Add(){
     }
 
     return(
-        <Form onSubmit={onSubmit} form={form} formChange={formChange}></Form>
+        <Form onSubmit={onSubmit} form={form} formChange={formChange} btn_value='Send'></Form>
     )
 }

@@ -3,12 +3,14 @@ import {useDispatch, useSelector} from 'react-redux'
 import './style.css'
 import { useNavigate } from 'react-router'
 import { userAuth } from '../../redux/thunk'
+import Input from '../../components/Input'
+import ButtonRounded from '../../components/ButtonRounded'
 
 export default function Register(){
     const [form, setForm] = useState({email: '', password: ''});
     const [confirmPwd, setConfirmPwd] = useState('');
-
     const state = useSelector(state => state.user);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -43,20 +45,11 @@ export default function Register(){
         <div className='register-container'>
             <form onSubmit={onSubmit}>
                 <h2 className='register-title'>Register</h2>
-                <div className='register-input-container'>
-                    <label>Email</label>
-                    <input type='text' name='email' placeholder='Email' value={form.email} onChange={formChange}></input>
-                </div>
-                <div className='register-input-container'>
-                    <label>Password</label>
-                    <input type='password' name='password' placeholder='Password' value={form.password} onChange={formChange}></input>
-                </div>
-                <div className='register-input-container'>
-                    <label>Confirm Password</label>
-                    <input type='password' name='confirm-pwd' placeholder='Confirm Password' value={confirmPwd} onChange={formChange}></input>
-                </div>
+                <Input type='text' name='email' placeholder='Email' value={form.email} formChange={formChange} label='Email'/>
+                <Input type='password' name='password' placeholder='Password' value={form.password} formChange={formChange} label='Password'/>
+                <Input type='password' name='confirm-pwd' placeholder='Confirm Password' value={confirmPwd} formChange={formChange} label='Confirm Password'/>
                 <div className='register-btn-container'>
-                    <button type='submit' className='register-btn'>Register</button>
+                    <ButtonRounded value='Register'/>
                 </div>
             </form>
         </div>
