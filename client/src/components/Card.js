@@ -17,7 +17,7 @@ export default function Card(props){
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    // check the pathname to display or not the edit buttons on card
     useEffect(() => {
         path.pathname === '/edit' ? setEditPage(true) : setEditPage(false);
     }, [path])

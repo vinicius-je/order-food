@@ -13,17 +13,17 @@ export default function Login(){
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    // set form data based in input name
     function formChange(e){
         setForm({...form, [e.target.name]: e.target.value});
     }
-
+    // send data to backend
     function onSubmit(e){
         e.preventDefault();
         dispatch(userAuth(form, true));
         setForm({email: '', password: ''});
     }
-
+    // if there is data in user state, redirect to menu
     useEffect(() => {
         if(state[0] !== undefined){ navigate('/menu') }
     }, [state, navigate])

@@ -7,7 +7,7 @@ export const removeClientOrder = createAction('REMOVE_CLIENT_ORDER');
 
 export const increment = createAction('INCREMENT');
 export const decrement = createAction('DECREMENT');
-
+// check if order exist
 const orderExist = (state, payload) => {
     return state.find(item => item.id === payload.id);
 }

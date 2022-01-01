@@ -11,11 +11,11 @@ export default function Header(){
     const orders = useSelector(state => state.orders);
 
     const dispatch = useDispatch();
-
+    // display quantity of the orders in cart icon
     const displayOrderQuantity = (total, item) => {
         return total += item.quantity;
     }
-    // clean localstorage and set user redux to empy array
+    // clean localstorage and set user redux to an empy array
     const logout = () => {
         localStorage.removeItem('token');
         dispatch(userLogout([]));

@@ -1,3 +1,4 @@
+import { addAlert, removeAlert } from "../alert"
 import { addNewMenuItem, deleteMenuItem, editMenuItem, getMenuItems } from "../menu"
 import { userLogin } from "../user"
 
@@ -30,7 +31,11 @@ export const postNewMenuItem = (item) => {
         }
         fetch('menu/add', options)
             .then(res => res.json())
-            .then(doc => dispatch(addNewMenuItem(doc)))
+            .then(doc => {
+                dispatch(addNewMenuItem(doc));
+                dispatch(addAlert());
+                setTimeout(() => dispatch(removeAlert()), 3000);
+            })
             .catch(console.log)
 
     }
@@ -48,7 +53,11 @@ export const editItem = (item) => {
         }
         fetch(`menu/edit/${item._id}`, options)
             .then(res => res.json())
-            .then(doc => dispatch(editMenuItem(doc)))
+            .then(doc => {
+                dispatch(editMenuItem(doc));
+                dispatch(addAlert());
+                setTimeout(() => dispatch(removeAlert()), 3000);
+            })
             .catch(console.log)
     }
 }
@@ -85,6 +94,8 @@ export const userAuth = (data, login) => {
                 dispatch(userLogin(data));
                 localStorage.setItem('token', JSON.stringify(data));
             })
-            .catch(console.log)
+            .catch((error) => {
+                if(error){login ? alert('Email or password invalid') : alert('Email already in use')}
+            })
     }
 }

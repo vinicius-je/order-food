@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
 import Form from '../../components/Form'
 import { editItem } from '../../redux/thunk'
+import Alert from '../../components/Alert'
+import './style.css'
 
 export default function EditItem(){ 
 
     const state = useSelector(state => state.menu);
+    const alert = useSelector(state => state.alert);
     const [form, setForm] = useState({url: '', name: '', description: '', price: 0});
 
     const params = useLocation();
@@ -22,11 +25,11 @@ export default function EditItem(){
             }
         });
     }, [state, params]) 
-
+    // set form data based in input name
     function formChange(e){
         setForm({...form, [e.target.name]: e.target.value});
     }
-
+    // send data to backend
     function onSubmit(e){
         e.preventDefault();
         dispatch(editItem(form));
@@ -35,6 +38,8 @@ export default function EditItem(){
 
     return(
         <div>
+            {alert.show ? <Alert value='Item edited'/> : <></>}
+            <h3 className='edit-menu-item'>Edit menu item</h3>
             {form !== '' ? <Form onSubmit={onSubmit} form={form} formChange={formChange} btn_value='Edit'/> : 'carregando' }
         </div>
     )

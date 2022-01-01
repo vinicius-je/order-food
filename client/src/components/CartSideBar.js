@@ -10,7 +10,7 @@ export default function CartSideBar(){
     const {cart, orders} = useSelector(state => state);
     const dispatch = useDispatch();
 
-    // sum total value
+    // sum total value of the orders
     const sum = (total, item) => {
         return total += item.value;
     }

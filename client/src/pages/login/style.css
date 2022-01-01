@@ -16,24 +16,6 @@
     text-align: center;
 }
 
-/* .login-input-container{
-    margin-bottom: 10px;
-} */
-
-/* .login-input-container input{
-    border: none;
-    background-color: #ECECEC;
-    height: 40px;
-    width: 100%;
-    margin: 5px 0;
-    padding: 0 5px;
-    outline: none;
-} */
-
-/* .login-input-container i{
-    font-size: 18px;
-} */
-
 .login-link-container{ 
     text-align: center;
 }
@@ -51,16 +33,3 @@
     text-align: center;
     margin-top: 20px;
 }
-
-/* .login-btn{
-    padding: 10px 0;
-    width: 180px;
-    border-radius: 50px;
-    border: none;
-    font-size: 1rem;
-    background-color: #d8d7d7;
-}
-
-.login-btn:hover{
-    background-color: #c4c4c4;
-} */

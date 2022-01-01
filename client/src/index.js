@@ -24,9 +24,9 @@ render(
     <Routes>
       <Route path='/' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
-      <Route path='' element={<PrivateRoute/>}>
+      <Route path='/' element={<PrivateRoute/>}>
         <Route path='menu' element={<Menu/>}/>
-        <Route path='' element={<AdminRoute/>}>
+        <Route path='/' element={<AdminRoute/>}>
           <Route path='add' element={<Add/>}/>
           <Route path='edit' element={<Edit/>}/>
           <Route path=':id' element={<EditItem/>}/>

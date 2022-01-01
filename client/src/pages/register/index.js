@@ -13,13 +13,13 @@ export default function Register(){
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    // if there is data in user state, redirect to menu
     useEffect(() => {
         if(state[0] !== undefined){
             navigate('/menu');
         }
     }, [state])
-
+    // set form data based in input name
     function formChange(e){
         if (e.target.name === 'confirm-pwd'){
             setConfirmPwd(e.target.value);
@@ -27,7 +27,7 @@ export default function Register(){
             setForm({...form, [e.target.name]: e.target.value});
         }
     }
-
+    // check password and send data to backend
     function onSubmit(e){
         e.preventDefault();
 
@@ -46,8 +46,8 @@ export default function Register(){
             <form onSubmit={onSubmit}>
                 <h2 className='register-title'>Register</h2>
                 <Input type='text' name='email' placeholder='Email' value={form.email} formChange={formChange} label='Email'/>
-                <Input type='password' name='password' placeholder='Password' value={form.password} formChange={formChange} label='Password'/>
-                <Input type='password' name='confirm-pwd' placeholder='Confirm Password' value={confirmPwd} formChange={formChange} label='Confirm Password'/>
+                <Input type='password' name='password' placeholder='Password' value={form.password} formChange={formChange} minLength='6' label='Password'/>
+                <Input type='password' name='confirm-pwd' placeholder='Confirm Password' value={confirmPwd} formChange={formChange} minLength='6' label='Confirm Password'/>
                 <div className='register-btn-container'>
                     <ButtonRounded value='Register'/>
                 </div>
