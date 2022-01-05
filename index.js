@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const menuRouter = require('./Routers/menu');
 const userRouter = require('./Routers/user');
+const paymentRouter = require('./Routers/payment')
 
 require('dotenv').config();
 
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 
 app.use('/user', userRouter)
 app.use('/menu', menuRouter)
+app.use('/payment', paymentRouter)
 
 app.listen(PORT, () => {
     console.log(`Server running on PORT:${PORT}`)
