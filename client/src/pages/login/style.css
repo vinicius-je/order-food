@@ -8,7 +8,7 @@
 .login-container form{
     width: 400px;
     padding: 50px 20px;
-    border: 1px solid #C4C4C4;
+    background-color: white;
 }
 
 .login-title{

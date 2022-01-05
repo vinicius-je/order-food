@@ -37,7 +37,7 @@ export default function EditItem(){
     }
 
     return(
-        <div>
+        <div className='edit-item-page-container'>
             {alert.show ? <Alert value='Item edited'/> : <></>}
             <h3 className='edit-menu-item'>Edit menu item</h3>
             {form !== '' ? <Form onSubmit={onSubmit} form={form} formChange={formChange} btn_value='Edit'/> : 'carregando' }

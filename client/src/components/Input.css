@@ -5,10 +5,10 @@
 
 .input-container input{
     border: none;
-    background-color: #ECECEC;
     height: 40px;
     width: 100%;
     margin: 5px 0;
     padding: 0 5px;
     outline: none;
+    background-color: #ECECEC;
 }

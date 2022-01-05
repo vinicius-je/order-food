@@ -22,10 +22,10 @@ export default function Add(){
     }
 
     return(
-        <>
+        <div className='add-page-container'>
         {alert.show ? <Alert value='Item added'/> : <></>}
         <h3 className='add-menu-title'>Add a new menu item</h3>
         <Form onSubmit={onSubmit} form={form} formChange={formChange} btn_value='Send'></Form>
-        </>
+        </div>
     )
 }

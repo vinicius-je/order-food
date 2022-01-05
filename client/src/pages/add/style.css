@@ -1,3 +1,8 @@
+.add-page-container input{
+    background-color: white;
+}
+
+
 .add-menu-title{
     text-align: center;
     margin: 30px 0;
@@ -6,3 +11,4 @@
 .hidden-title{
     display: none;
 }
+

@@ -8,7 +8,7 @@
 .register-container form{
     width: 400px;
     padding: 50px 20px;
-    border: 1px solid #C4C4C4;
+    background-color: white;
 }
 
 .register-input-container{
@@ -22,7 +22,6 @@
 
 .register-input-container input{
     border: none;
-    background-color: #ECECEC;
     height: 40px;
     width: 100%;
     margin: 5px 0;

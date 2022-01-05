@@ -1,8 +1,8 @@
 .alert{
     text-align: center;
-    background-color: #66CC9C;
+    background-color: #4FF993;
     padding: 10px 0;
     width: 360px;
-    margin: auto;
+    margin: 20px auto 0;
     border-radius: 3px;
 }
