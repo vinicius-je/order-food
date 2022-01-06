@@ -1,0 +1,51 @@
+.checkout-form-container{
+    background-color: #565CBA;
+    color: white;
+    width: 500px;
+    border-radius: 3px;
+}
+
+.checkout-form-container form{
+    padding: 40px 0;
+    margin: 0 auto;
+    width: 380px;
+}
+
+.checkout-form-container input{
+    background-color: #6268C6;
+    color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.726);
+}
+
+.checkout-form-container h3{
+    margin: 10px 0;
+    font-weight: lighter;
+}
+
+.checkout-form-input-container{
+    width: 380px;
+}
+
+.checkout-form-input-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-form-btn-container{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkout-form-btn-container button{
+    background-color: #52E1BC;
+    color: white;
+    font-weight: bold;
+}
+
+.checkout-form-btn-container button:hover{
+    background-color: #2eddae;
+}

@@ -1,0 +1,25 @@
+.checkout-container{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.checkout-box-1{
+    width: 430px;
+}
+
+.checkout-orders-container{
+    width: 100%;
+    height: 330px;
+    overflow-y: auto;
+}
+
+.checkout-cancel-btn{
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: .875rem;
+    margin-bottom: 20px;
+}
