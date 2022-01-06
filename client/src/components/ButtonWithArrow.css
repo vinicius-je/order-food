@@ -1,0 +1,13 @@
+.btn-with-arrow{
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: .875rem;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.btn-with-arrow:hover{
+    background-color: #C4C4C4;
+}

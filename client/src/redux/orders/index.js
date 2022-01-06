@@ -4,6 +4,7 @@ const CLIENT_ORDER = [];
 
 export const getClientOrder = createAction('GET_CLIENT_ORDER');
 export const removeClientOrder = createAction('REMOVE_CLIENT_ORDER');
+export const removeAllClientOrders = createAction('REMOVE_ALL_CLIENT_ORDER')
 
 export const increment = createAction('INCREMENT');
 export const decrement = createAction('DECREMENT');
@@ -31,6 +32,7 @@ const counter = (state, payload ,type) => {
 export default createReducer(CLIENT_ORDER, {
     [getClientOrder]: (state, action) => orderExist(state, action.payload) ? alert('order exist') : [...state, action.payload] ,
     [removeClientOrder]: (state, action) => state.filter(state => state.id !== action.payload),
+    [removeAllClientOrders]: (state, action) => [],
     [increment]: (state, action) => counter(state, action.payload, action.type),
     [decrement]: (state, action) => counter(state, action.payload, action.type)
 })

@@ -1,5 +1,6 @@
 import { addAlert, removeAlert } from "../alert"
 import { addNewMenuItem, deleteMenuItem, editMenuItem, getMenuItems } from "../menu"
+import { removeAllClientOrders } from "../orders";
 import { userLogin } from "../user"
 
 const getToken = () => {
@@ -97,5 +98,25 @@ export const userAuth = (data, login) => {
             .catch((error) => {
                 if(error){login ? alert('Email or password invalid') : alert('Email already in use')}
             })
+    }
+}
+
+export const paymentCheckout = (data) => {
+
+    return dispatch => {
+        const options = {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(data)
+        }
+        fetch('/payment', options)
+            .then(res => res.json())
+            .then(data => {
+                if(data.payment) { 
+                    alert('Payment approved')
+                    dispatch(removeAllClientOrders())
+                }
+            })
+            .catch((error) => alert('Payment not approved'))
     }
 }
