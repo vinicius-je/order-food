@@ -1,7 +1,8 @@
 import React from 'react'
 import { Outlet } from 'react-router'
-import { Navigate } from 'react-router'
+// import { Navigate } from 'react-router'
 import jwt_decode from 'jwt-decode'
+import Forbidden from '../../pages/forbidden';
 
 export default function AdminRoute(){
 
@@ -10,7 +11,7 @@ export default function AdminRoute(){
 
     return(
         <>  
-            {user.admin ? <Outlet/> : <Navigate to='/'/>}
+            {user.admin ? <Outlet/> : <Forbidden/>}
         </>
     )
 }

@@ -14,3 +14,25 @@
     height: 330px;
     overflow-y: auto;
 }
+
+        @media screen and (max-width: 950px){
+            .checkout-container{
+                flex-direction: column;
+                height: 100%;
+                padding: 40px 0;
+            }
+
+            .checkout-box-1{
+                width: 500px;
+            }
+
+            .checkout-box-2{
+                margin-top: 40px;
+            }
+        }
+
+        @media screen and (max-width: 530px){
+            .checkout-box-1, .checkout-box-2{
+                width: 90%;
+            }
+        }

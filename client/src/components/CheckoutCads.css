@@ -6,7 +6,7 @@
     align-items: center;
     padding: 10px;
     width: 100%;
-    font-size: 14px;
+    font-size: .875rem;
     margin-bottom: 10px;
 }
 
@@ -14,3 +14,21 @@
     width: 124px;
     height: 80px;
 }
+
+
+        @media screen and (max-width: 500px){
+            .checkout-cards-container{
+                font-size: 12px;
+                padding: 10px 0;
+            }
+
+            .checkout-cards-container .counter{
+                margin: 10px 0;
+                width: 60px;
+            }
+
+            .checkout-cards-container img{
+                width: 75px;
+                height: 50px;
+            }
+        }

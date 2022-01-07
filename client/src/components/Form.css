@@ -8,3 +8,9 @@
 .form-container button{
     margin-top: 20px;
 }
+
+        @media screen and (max-width: 380px){
+            .form-container{
+                width: 280px;
+            }
+        }

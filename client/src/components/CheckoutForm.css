@@ -49,3 +49,18 @@
 .checkout-form-btn-container button:hover{
     background-color: #2eddae;
 }
+
+        @media screen and (max-width: 530px){
+            .checkout-form-container{
+                width: 100%;
+            }
+
+            .checkout-form-container form{
+                width: 90%;
+                margin: auto;
+            }
+
+            .checkout-form-input-container{
+                width: 100%;
+            }
+        }

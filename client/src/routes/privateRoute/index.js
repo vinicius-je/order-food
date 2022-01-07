@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Navigate } from 'react-router'
-import Header from '../../components/Header'
+import { Navigate, Outlet } from 'react-router'
 import { userLogin } from '../../redux/user'
 
 export default function PrivateRoute({children}){
@@ -15,9 +14,8 @@ export default function PrivateRoute({children}){
 
     
     return (
-        <>
-            <Header/>
-            {token !== null ? children : <Navigate to='/'/>}
+        <>  
+            {token !== null ? <Outlet/> : <Navigate to='/'/>}
         </>
     )
         

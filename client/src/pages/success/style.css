@@ -24,3 +24,22 @@
     height: 192px;
     margin-bottom: 30px;
 }
+
+
+        @media screen and (max-width: 620px){
+            .Success-rectangle{
+                width: 90%;
+                font-size: 16px;
+            }
+
+            .Success-rectangle img{
+                width: 275px;
+                height: 121px;
+                margin-bottom: 30px;
+            }
+
+            .Success-rectangle h3{
+                text-align: center;
+                padding: 0 20px;
+            }
+        }

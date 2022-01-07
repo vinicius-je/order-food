@@ -49,3 +49,10 @@
 .checkout-btn:hover{
     background-color: #BEBEBE;
 }
+
+
+        @media screen and (max-width: 330px){
+            .sidebar-container{
+                width: 280px;
+            }
+        }

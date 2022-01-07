@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 
 import store from './redux/store'
 
+import Header  from './components/Header'
 import Edit from './pages/edit'
 import Add from './pages/add'
 import EditItem from './pages/editItem'
@@ -26,14 +27,16 @@ render(
     <Routes>
       <Route path='/' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
-      <Route path='/checkout' element={<Checkout/>}/>
-      <Route path='/success' element={<Success/>}/>
       <Route path='/' element={<PrivateRoute/>}>
-        <Route path='menu' element={<Menu/>}/>
-        <Route path='/' element={<AdminRoute/>}>
-          <Route path='add' element={<Add/>}/>
-          <Route path='edit' element={<Edit/>}/>
-          <Route path=':id' element={<EditItem/>}/>
+        <Route path='/checkout' element={<Checkout/>}/>
+        <Route path='/success' element={<Success/>}/>
+        <Route path='' element={<Header/>}>
+          <Route path='menu' element={<Menu/>}/>
+          <Route path='/' element={<AdminRoute/>}>
+            <Route path='add' element={<Add/>}/>
+            <Route path='edit' element={<Edit/>}/>
+            <Route path=':id' element={<EditItem/>}/>
+          </Route>
         </Route>
       </Route>
     </Routes>
