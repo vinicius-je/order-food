@@ -23,7 +23,7 @@ export default function Header(){
 
     return(
         <>
-        <header>
+        <header className='header'>
             <h3 className='logo'>Logo</h3>
             <ul className='navLinks'>
                 <Link to='menu'><li className='link-btn'>menu</li></Link>

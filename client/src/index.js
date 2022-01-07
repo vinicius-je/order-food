@@ -16,6 +16,7 @@ import PrivateRoute from './routes/privateRoute'
 import AdminRoute from './routes/adminRoute'
 import Register from './pages/register'
 import Checkout from './pages/checkout'
+import Success from './pages/success'
 
 
 const rootElement = document.getElementById("root");
@@ -26,6 +27,7 @@ render(
       <Route path='/' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/checkout' element={<Checkout/>}/>
+      <Route path='/success' element={<Success/>}/>
       <Route path='/' element={<PrivateRoute/>}>
         <Route path='menu' element={<Menu/>}/>
         <Route path='/' element={<AdminRoute/>}>

@@ -1,0 +1,26 @@
+.Success-header{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.Success-header button{
+    margin: 0 10px 0;
+}
+
+.Success-rectangle{
+    border: 3px solid white;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.Success-rectangle img{
+    width: 436px;
+    height: 192px;
+    margin-bottom: 30px;
+}

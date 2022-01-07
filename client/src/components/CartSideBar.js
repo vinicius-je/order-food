@@ -5,7 +5,7 @@ import { showCartSideBar } from '../redux/cart'
 import CartOrderCard from './CartOrderCard'
 import { useNavigate } from 'react-router-dom'
 import TotalPrice from './TotalPrice'
-
+import { toggleCartSideBar } from '../redux/cart'
 
 export default function CartSideBar(){
 
@@ -22,7 +22,11 @@ export default function CartSideBar(){
             </div>
             <div className='cartSideBar-footer'>
                 <TotalPrice orders={orders}/>
-                <button className='checkout-btn' onClick={() => {navigate('/checkout')}}>checkout</button>
+                <button className='checkout-btn' onClick={() => { 
+                    navigate('/checkout'); 
+                    // close cart sidebar
+                    dispatch(toggleCartSideBar());
+                }}>checkout</button>
             </div>
         </div>
     )
