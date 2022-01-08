@@ -36,7 +36,7 @@ export default function Card(props){
                 <h3 className='name'>{name}</h3>
                 <p className='description'>{description}</p>
                 <h3 className='price'>$ {price.toFixed(2)}</h3>
-                {editPage === false ? <button className='order-btn btn' onClick={() => {addItem({...props.item, quantity: 1}); dispatch(showCartSideBar(true))}}>order</button> : 
+                {editPage === false ? <button className='order-btn btn' onClick={() => {addItem({...props.item, quantity: 1}); dispatch(showCartSideBar())}}>order</button> : 
                 <div className='edit-btn-container'>
                     <button className='btn edit-btn' onClick={() => navigate(`/${_id}`)}>edit</button>
                     <button className='btn delete-btn' onClick={() => dispatch(deleteItem(_id))}>delete</button>

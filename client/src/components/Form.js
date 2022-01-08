@@ -1,10 +1,24 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import ButtonRounded from './ButtonRounded'
 import './Form.css'
 import Input from './Input'
 
 export default function Form(props){
-    const {onSubmit, form, formChange, btn_value} = props;
+    const {form, setForm, callback, btnValue} = props;
+
+    const dispatch = useDispatch();
+    // send data to backend
+    function onSubmit(e){
+        e.preventDefault();
+        dispatch(callback(form));
+        setForm({url: '', name: '', description: '', price: 0});
+    }
+
+    // set form data based in input name
+    function formChange(e){
+        setForm({...form, [e.target.name]: e.target.value});
+    }
 
     return(
         <form className='form-container' onSubmit={onSubmit}>
@@ -12,7 +26,7 @@ export default function Form(props){
             <Input type='text' name='name' placeholder='Food name' value={form.name} formChange={formChange} minLength='3' maxLength='30' label='Food Name'/>
             <Input type='text' name='description' placeholder='Description' value={form.description} formChange={formChange} minLength='3' maxLength='100' label='Description'/>
             <Input type='number' name='price' placeholder='Price' max='100' min='0' step='any' value={form.price} formChange={formChange} label='Price'/>
-            <ButtonRounded value={btn_value}/>
+            <ButtonRounded value={btnValue}/>
         </form>
     )
 }

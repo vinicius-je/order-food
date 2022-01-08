@@ -6,6 +6,6 @@ export const showCartSideBar = createAction('SHOW_CART_SIDEBAR');
 export const toggleCartSideBar = createAction('TOGGLE_CART_SIDEBAR');
 
 export default createReducer(INITIAL_STATE, {
-    [showCartSideBar.type]: (state, action) => ({...state, show: action.payload}),
+    [showCartSideBar.type]: (state, action) => ({...state, show: true}),
     [toggleCartSideBar.type]: (state, action) => ({...state, show: !state.show})
 })

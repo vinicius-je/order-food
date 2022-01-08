@@ -31,11 +31,7 @@ export default function Register(){
     function onSubmit(e){
         e.preventDefault();
 
-        if(confirmPwd === form.password){
-            dispatch(userAuth(form, false));
-        }else{
-            alert("password don't match, try again");
-        }
+        confirmPwd === form.password ? dispatch(userAuth(form, false)) : alert("password don't match, try again")
 
         setForm({email: '', password: ''})
         setConfirmPwd('')
