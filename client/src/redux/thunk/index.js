@@ -9,12 +9,17 @@ const getToken = () => {
 
 export const fetchMenuItems = () => {
     return dispatch => {
-        const options = {
-            headers: {'authorization-token': getToken()}
-        }
-        fetch('menu/items', options)
-            .then(res => res.json())
-            .then(doc => dispatch(getMenuItems(doc)))
+        // const options = {
+        //     headers: {
+        //         'authorization-token': getToken(),
+        //         'Content-Type':'application/json; charset=utf-8'
+        //     }
+        // }
+        fetch('menu/items')
+            .then(res => {
+                console.log(res.clone().json())
+            })
+            .then(data => dispatch(getMenuItems(data)))
             .catch(console.log)
     }
 }

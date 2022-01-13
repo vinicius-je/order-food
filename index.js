@@ -10,21 +10,21 @@ require('dotenv').config();
 // connection to mongo database
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGO_CONNECTION_URL)
+mongoose.connect(process.env.MONGO_CONNECTION_URL_LOCAL)
     .then(console.log('mongo connected'))
     .catch(console.log)
 
-const PORT = 3000;
+const PORT = 3001;
 
-app.use(express.static(path.join(__dirname, 'client/build')))
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build/index.html'), (error) => {
-        if(error) {
-            res.status(500).send(error)
-        }
+if(process.env.NODE_ENV != 'dev'){
+    app.use('*', (req, res, next) => {
+        if(req.header['x-forwarded-photo'] == 'https') next()
+        else res.redirect('https://' + req.headers.host + req.originalUrl)
     })
-})
+}else{
+    app.use(express.static(path.join(__dirname, 'client/build')))
+    app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client/build/index.html')))
+}
 
 app.use('/user', userRouter)
 app.use('/menu', menuRouter)
