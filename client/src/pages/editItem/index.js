@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useLocation } from 'react-router'
+import { useParams } from 'react-router'
 import Form from '../../components/Form'
 import { editItem } from '../../redux/thunk'
 import Alert from '../../components/Alert'
@@ -10,18 +10,17 @@ export default function EditItem(){
 
     const {menu, alert} = useSelector(state => state);
     const [form, setForm] = useState({url: '', name: '', description: '', price: 0});
-    const params = useLocation();
+
+    const { id } = useParams();
 
     useEffect(() => {
-        // get the item id from url to add all information in form
-        let paramsID = params.pathname.substring(1);
         menu.forEach(element => {
-            if(element._id === paramsID){
+            if(element._id === id){
                 const {_id, url, name, description, price} = element;
                 setForm({_id, url, name, description, price});
             }
         });
-    }, [menu, params]) 
+    }, [menu]) 
 
     return(
         <div className='edit-item-page-container'>

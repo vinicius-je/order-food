@@ -6,22 +6,18 @@ const securityController = require('../controllers/securityController');
 // middleware
 router.use(express.json());
 
-// router.use(securityController.userAuth);
+router.use(securityController.userAuth);
 
 router.get('/items', menuController.getMenuItems);
 
 router.get('/:id', menuController.getMenuItemById);
 
-router.get('/test', menuController.test)
-
-
-// router.use(securityController.userAdmin);
+router.use(securityController.userAdmin);
 
 router.post('/add', menuController.createMenuItem);
 
 router.put('/edit/:id', menuController.editMenuItem);
 
 router.delete('/delete/:id', menuController.deleteMenuItem);
-
 
 module.exports = router

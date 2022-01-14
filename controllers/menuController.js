@@ -1,7 +1,6 @@
 const MenuItem = require('../models/MenuItem');
 
 const getMenuItems = async (req, res) => {
-    console.log('teste')
     const items = await MenuItem.find({});
     res.send(items)
 }
@@ -58,10 +57,4 @@ const deleteMenuItem = async (req, res) => {
     }
 }
 
-const test = (req, res) => {
-    console.log('test');
-    res.send('test');
-}
-
-
-module.exports = {getMenuItems, getMenuItemById, createMenuItem, editMenuItem, deleteMenuItem, test}
+module.exports = {getMenuItems, getMenuItemById, createMenuItem, editMenuItem, deleteMenuItem}
