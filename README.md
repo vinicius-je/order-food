@@ -4,11 +4,14 @@
 Criar um sistema para relizar pedidos de comida
 
 ## Antevisão
-![image](https://user-images.githubusercontent.com/67986109/147857900-51105b9e-610f-4b78-b668-bc11cc43c70b.png)
-![image](https://user-images.githubusercontent.com/67986109/147858056-6a01e5e9-b4e0-4f18-95cf-e32ab774b313.png)
-![image](https://user-images.githubusercontent.com/67986109/147858071-e4a31ff7-3ff8-4057-867a-2690ba7474f8.png)
-![image](https://user-images.githubusercontent.com/67986109/147857997-5f348d4b-60ac-4155-aa62-f54884834b5a.png)
-![image](https://user-images.githubusercontent.com/67986109/147858083-bd00a43c-a926-4be7-89cf-1ba7484d569c.png)
+![image](https://user-images.githubusercontent.com/67986109/150002180-8e280c20-9e7c-40d0-b6fe-6936136e830e.png)
+![image](https://user-images.githubusercontent.com/67986109/150002271-e4ce6fa1-49c5-4630-ae9c-379e1def9c6e.png)
+![image](https://user-images.githubusercontent.com/67986109/150002389-85765a11-380c-43b4-9afd-6a18f7ae29f6.png)
+![image](https://user-images.githubusercontent.com/67986109/150002676-47faadb4-3f35-4890-95e2-33a4357c9254.png)
+![image](https://user-images.githubusercontent.com/67986109/150002455-d0a67f2b-00d0-4cbb-a8de-51b485369901.png)
+![image](https://user-images.githubusercontent.com/67986109/150002505-a7a7d4a8-9ff5-4d19-9712-e8f02c63db1b.png)
+
+
 
 
 
@@ -22,8 +25,8 @@ Criar um sistema para relizar pedidos de comida
 - [x] Autenticação de usuário
 - [x] Registro de usuário
 - [x] Encerrar a seção
-- [ ] Confirmar o pedido
-- [ ] Deploy do projeto
+- [x] Confirmar o pedido
+- [x] Deploy do projeto
 
 ## Tecnologias utilizadas
 ### Frontend
