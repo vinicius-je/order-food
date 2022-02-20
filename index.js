@@ -22,7 +22,7 @@ app.use('/payment', paymentRouter)
 
 if(process.env.NODE_ENV != 'dev'){
     // app.use('*', (req, res, next) => {
-    //     if(req.header['x-forwarded-photo'] == 'https') next()
+    //     if(req.headers['x-forwarded-proto'] == 'https') next()
     //     else res.redirect('https://' + req.headers.host + req.originalUrl)
     // })
     app.use(express.static(path.join(__dirname, 'client/build')))
