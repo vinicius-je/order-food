@@ -9,7 +9,6 @@ export default function PrivateRoute(){
     const token = JSON.parse(localStorage.getItem('token'));
 
     useEffect(() => {
-        console.log(token)
         if(token !== null){ dispatch(userLogin(token)); }
     }, [])
 

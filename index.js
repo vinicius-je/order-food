@@ -21,10 +21,10 @@ app.use('/menu', menuRouter)
 app.use('/payment', paymentRouter)
 
 if(process.env.NODE_ENV != 'dev'){
-    app.use('*', (req, res, next) => {
-        if(req.header['x-forwarded-photo'] == 'https') next()
-        else res.redirect('https://' + req.headers.host + req.originalUrl)
-    })
+    // app.use('*', (req, res, next) => {
+    //     if(req.header['x-forwarded-photo'] == 'https') next()
+    //     else res.redirect('https://' + req.headers.host + req.originalUrl)
+    // })
     app.use(express.static(path.join(__dirname, 'client/build')))
     app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client/build/index.html')))
 }

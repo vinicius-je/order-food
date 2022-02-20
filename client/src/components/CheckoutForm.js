@@ -51,7 +51,7 @@ export default function CheckoutForm(){
                 </div>
                 <h3>Payment</h3>
                 <div className='checkout-form-input-container'>
-                    <Input type='text' name='card_number' label='Credit card details' placeholder='1234 1234 1234 1234' pattern='[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}' value={userData.card_number} formChange={formChange}/>
+                    <Input type='text' name='card_number' label='Credit card details' placeholder='1010 1010 1010 1010' pattern='[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}' value={userData.card_number} formChange={formChange}/>
                 </div>
                 <div className='checkout-form-input-container checkout-form-input-flex'>
                     <Input type='text' name='expiration_date' placeholder='MM/YY' pattern='[01-12]{2}/[01-31]{2}' value={userData.expiration_date} formChange={formChange}/>
