@@ -10,7 +10,7 @@ require('dotenv').config();
 // connection to mongo database
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGO_CONNECTION_URL)
+mongoose.connect(process.env.MONGO_LOCAL_URL)
     .then(console.log('mongo connected'))
     .catch(console.log)
 

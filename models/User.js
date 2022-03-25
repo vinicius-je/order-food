@@ -7,4 +7,4 @@ const userAccountSchema = mongoose.Schema({
     createDate: {type: Date, default: Date.now()}
 })
 
-module.exports = mongoose.model('userAccount', userAccountSchema)
+module.exports = mongoose.model('users', userAccountSchema)
