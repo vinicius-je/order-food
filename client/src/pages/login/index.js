@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import ButtonRounded from '../../components/ButtonRounded'
 import Input from '../../components/Input'
+import RectangleButton from '../../components/RectangleButton'
+import Title from '../../components/Title'
 import { auth } from '../../redux/thunk'
 import './style.css'
 
@@ -31,15 +33,14 @@ export default function Login(){
     return(
         <div className='login-container'>
             <form onSubmit={onSubmit}>
-                <h2 className='login-title'>Login</h2>
+                <Title/>
+                <p className='sub-title-login'>Login</p>
                 <Input type='text' name='email' placeholder='Email' minLength='3' maxLength='100' value={form.email} formChange={formChange} label='Email'/>
                 <Input type='password' name='password' placeholder='Password' minLength='6' maxLength='100' value={form.password} formChange={formChange} label='Password'/>
                 <div className='login-link-container'>
                     <Link className='register-link' to='/register'>Don’t have an account? Register</Link>
                 </div>
-                <div className='login-btn-container'>
-                    <ButtonRounded value='Login'/>
-                </div>
+                <RectangleButton value="Login"/>
             </form>
         </div>
     )

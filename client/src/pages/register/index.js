@@ -4,7 +4,8 @@ import './style.css'
 import { useNavigate } from 'react-router'
 import { auth } from '../../redux/thunk'
 import Input from '../../components/Input'
-import ButtonRounded from '../../components/ButtonRounded'
+import RectangleButton from '../../components/RectangleButton'
+import Title from '../../components/Title'
 
 export default function Register(){
     const [form, setForm] = useState({email: '', password: ''});
@@ -37,13 +38,12 @@ export default function Register(){
     return(
         <div className='register-container'>
             <form onSubmit={onSubmit}>
-                <h2 className='register-title'>Register</h2>
+                <Title/>
+                <p className='sub-title-register'>Register</p>
                 <Input type='text' name='email' placeholder='Email' value={form.email} formChange={formChange} label='Email'/>
                 <Input type='password' name='password' placeholder='Password' value={form.password} formChange={formChange} minLength='6' label='Password'/>
                 <Input type='password' name='confirm-pwd' placeholder='Confirm Password' value={confirmPwd} formChange={formChange} minLength='6' label='Confirm Password'/>
-                <div className='register-btn-container'>
-                    <ButtonRounded value='Register'/>
-                </div>
+                <RectangleButton value='Register'/>
             </form>
         </div>
     )

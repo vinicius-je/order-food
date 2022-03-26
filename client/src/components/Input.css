@@ -3,12 +3,17 @@
     text-align: left;
 }
 
+.input-container label{
+    font-weight: bold;
+}
+
 .input-container input{
-    border: none;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
     height: 40px;
     width: 100%;
     margin: 5px 0;
     padding: 0 5px;
     outline: none;
-    background-color: #ECECEC;
+    background-color: white;
 }

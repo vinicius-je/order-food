@@ -2,10 +2,8 @@
     width: 180px;
     padding: 10px 0;
     border-radius: 50px;
-    border: none;
     font-size: 1rem;
     background-color: #d8d7d7;
-    cursor: pointer;
 }
 
 .btn-rounded:hover{

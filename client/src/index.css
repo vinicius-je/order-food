@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 *{
   margin: 0;
@@ -13,7 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ECECEC;
+  background-color: #EBEBEB;
 }
 
 code {
@@ -24,4 +25,10 @@ code {
 a{
   text-decoration: none;
   color: black;
+}
+
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
