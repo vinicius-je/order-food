@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import ButtonRounded from '../../components/ButtonRounded'
 import Input from '../../components/Input'
-import { userAuth } from '../../redux/thunk'
+import { auth } from '../../redux/thunk'
 import './style.css'
 
 export default function Login(){
 
     const [form, setForm] = useState({email: '', password: ''});
-    const state = useSelector(state => state.user);
+    const state = useSelector(state => state.auth);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -20,13 +20,13 @@ export default function Login(){
     // send data to backend
     function onSubmit(e){
         e.preventDefault();
-        dispatch(userAuth(form, true));
+        dispatch(auth(form, true));
         setForm({email: '', password: ''});
     }
-    // if there is data in user state, redirect to menu
+
     useEffect(() => {
-        if(state[0] !== undefined){ navigate('/menu') }
-    }, [state, navigate])
+        if(state.auth){ navigate('/menu'); }
+    }, [state])
 
     return(
         <div className='login-container'>

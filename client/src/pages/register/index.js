@@ -2,23 +2,22 @@ import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import './style.css'
 import { useNavigate } from 'react-router'
-import { userAuth } from '../../redux/thunk'
+import { auth } from '../../redux/thunk'
 import Input from '../../components/Input'
 import ButtonRounded from '../../components/ButtonRounded'
 
 export default function Register(){
     const [form, setForm] = useState({email: '', password: ''});
     const [confirmPwd, setConfirmPwd] = useState('');
-    const state = useSelector(state => state.user);
+    const state = useSelector(state => state.auth);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // if there is data in user state, redirect to menu
+
     useEffect(() => {
-        if(state[0] !== undefined){
-            navigate('/menu');
-        }
-    }, [state])
+        if(state.auth){ navigate('/menu'); }
+    }, [state, navigate])
+
     // set form data based in input name
     function formChange(e){
         if (e.target.name === 'confirm-pwd'){
@@ -30,11 +29,9 @@ export default function Register(){
     // check password and send data to backend
     function onSubmit(e){
         e.preventDefault();
-
-        confirmPwd === form.password ? dispatch(userAuth(form, false)) : alert("password don't match, try again")
-
-        setForm({email: '', password: ''})
-        setConfirmPwd('')
+        confirmPwd === form.password ? dispatch(auth(form, false)) : alert("password don't match, try again");
+        setForm({email: '', password: ''});
+        setConfirmPwd('');
     }
 
     return(

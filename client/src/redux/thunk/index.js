@@ -1,6 +1,7 @@
 import { addAlert, removeAlert } from "../alert"
+import { userAuth } from "../auth";
 import { addNewMenuItem, deleteMenuItem, editMenuItem, getMenuItems } from "../menu"
-import { userLogin } from "../user"
+import { userData } from "../user"
 
 const getToken = () => {
     const user = JSON.parse(localStorage.getItem('token'));
@@ -75,8 +76,7 @@ export const deleteItem = (id) => {
     }
 }
 
-// user actions
-export const userAuth = (data, login) => {
+export const auth = (data, login) => {
 
     const URL = login ? 'user/login' : 'user/register'
 
@@ -89,8 +89,9 @@ export const userAuth = (data, login) => {
         fetch(URL , options)
             .then(res => res.json())
             .then(data => {
-                dispatch(userLogin(data));
+                dispatch(userData(data));
                 localStorage.setItem('token', JSON.stringify(data));
+                dispatch(userAuth(true));
             })
             .catch((error) => {
                 if(error){login ? alert('Email or password invalid') : alert('Email already in use')}

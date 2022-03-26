@@ -5,6 +5,7 @@ import { userLogout } from '../redux/user'
 import CartSideBar from './CartSideBar'
 import { toggleCartSideBar } from '../redux/cart'
 import './Header.css'
+import { userAuth } from '../redux/auth'
 
 export default function Header(props){
 
@@ -20,6 +21,7 @@ export default function Header(props){
     // clean localstorage and set user redux to an empy array
     const logout = () => {
         localStorage.removeItem('token');
+        dispatch(userAuth(false))
         dispatch(userLogout([]));
     }
 
