@@ -1,4 +1,4 @@
-const MenuItem = require('../models/MenuItem');
+const MenuItem = require('../models/Menu');
 
 const getMenuItems = async (req, res) => {
     const items = await MenuItem.find({});
@@ -12,14 +12,9 @@ const getMenuItemById = async (req, res) => {
 }
 
 const createMenuItem = async (req, res) => {
-
-    const menuItem = new MenuItem({
-        url: req.body.url,
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price
-    })
-
+    const {url, title, description, price, time, portion} = req.body;
+    const menuItem = new MenuItem({url, title, description, price, time, portion});
+    
     try {
         let savedMenuItem = await menuItem.save();
         res.send(savedMenuItem);
