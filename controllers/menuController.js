@@ -24,14 +24,9 @@ const createMenuItem = async (req, res) => {
 }
 
 const editMenuItem = async (req, res) => {
-    let id = req.params.id;
-    
-    const menuItemData = {
-        url: req.body.url,
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price
-    }
+    const id = req.params.id;
+    const {url, title, description, price, time, portion} = req.body;
+    const menuItemData = {url, title, description, price, time, portion}
 
     try {
         let item = await MenuItem.updateOne({_id: id}, menuItemData);
