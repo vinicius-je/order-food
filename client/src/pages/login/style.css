@@ -7,6 +7,7 @@
 
 .login-container h1{
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .sub-title-login{
@@ -21,7 +22,7 @@
     margin: 3px auto;
     height: 3px;
     width: 40px;
-    background-color: #36FD15;
+    background-color: var(--custom_red);
 }
 
 .login-container form{

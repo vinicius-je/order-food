@@ -2,7 +2,7 @@
     width: 100%;
     padding: 10px 0;
     font-size: 1rem;
-    background-color: #36FD15;
+    background-color: var(--custom_red);
     border-radius: 3px;
     color: white;
     font-weight: bold;
