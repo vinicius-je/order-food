@@ -1,0 +1,31 @@
+.search-bar-container{
+    width: 350px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    margin: 10px 0;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.search-input, .search-btn{
+    height: 100%;
+}
+
+.search-input{
+    width: 80%;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search-btn{
+    width: 20%;
+    background-color: var(--custom_red);
+}
+
+.search-btn i{
+    font-size: 20px;
+    color: white;
+}

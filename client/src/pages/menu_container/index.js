@@ -5,6 +5,7 @@ import './style.css'
 import Backgound from '../background';
 
 import Card from '../../components/Card'
+import SearchBar from '../../components/SearchBar';
 
 export default function Menu(){
     const menuItems = useSelector(state => state.menu);
@@ -15,11 +16,12 @@ export default function Menu(){
     }, [])
 
     return(
-        <>  
-            <Backgound></Backgound>
+        <div className='main-page'>  
+            <Backgound/>
+            <SearchBar/>
             <div className='container'>
                 {menuItems.map((item, index) => <Card item={item} index={index} key={index}></Card>)}
             </div>
-        </>
+        </div>
     )
 }
