@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const menuItemSchema = mongoose.Schema({
     url: {type: String, require: true},
-    title: {type :String, require: true, minlength: 3, maxlenght: 30},
+    name: {type :String, require: true, minlength: 3, maxlenght: 30},
     description: {type: String, require: true, minlength: 3, maxlenght: 100},
     price: {type: Number, require: true, min: 0, max: 500},
     time: {type: Number, require: true, min: 1, max: 55},

@@ -13,7 +13,7 @@ const Card = (props) => {
     const [editPage, setEditPage] = useState(false);
 
     const index = props.index;
-    const {_id, name, url, description, price} = props.item;
+    const {_id, name, url, description, price, time, portion} = props.item;
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -23,24 +23,42 @@ const Card = (props) => {
     }, [path])
 
     const addItem = (item) =>{
-        const {_id, name, url, price, quantity} = item;
-        const order = createOrder(_id, name, url, price, quantity);
+        const {_id, name, url, price, quantity, time, portion} = item;
+        const order = createOrder(_id, name, url, price, quantity, time, portion);
         dispatch(getClientOrder(order));
     }
 
     return(
         <div className='card-container'>
             <div className='card'>
-                <h4 className='number'>Nº{index + 1}</h4>
+                {/* <h4 className='number'>Nº{index + 1}</h4> */}
                 <img src={url} alt={name}></img>
-                <h3 className='name'>{name}</h3>
-                <p className='description'>{description}</p>
-                <h3 className='price'>$ {price.toFixed(2)}</h3>
-                {editPage === false ? <button className='order-btn btn' onClick={() => {addItem({...props.item, quantity: 1}); dispatch(showCartSideBar())}}>order</button> : 
-                <div className='edit-btn-container'>
-                    <button className='btn edit-btn' onClick={() => navigate(`/${_id}`)}>edit</button>
-                    <button className='btn delete-btn' onClick={() => dispatch(deleteItem(_id))}>delete</button>
-                </div>}
+                <div className='card-body'>
+                    <h3 className='name'>{name}</h3>
+                    <div className='description-box'>
+                        <h4>Description</h4>
+                        <p className='description'>{description}</p>
+                    </div>
+                    <div className='card-flex-box'>
+                        <div className='card-box'>
+                            <h4>Time</h4>
+                            <p>{time} min</p>
+                        </div>
+                        <div className='card-box'>
+                            <h4>Portion</h4>
+                            <p>{portion} person</p>
+                        </div>
+                        <div className='card-box'>
+                            <h4>Price</h4>
+                            <p className='price'>$ {price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                    {editPage === false ? <button className='order-btn btn' onClick={() => {addItem({...props.item, quantity: 1}); dispatch(showCartSideBar())}}>order</button> : 
+                    <div className='edit-btn-container'>
+                        <button className='btn edit-btn' onClick={() => navigate(`/${_id}`)}>edit</button>
+                        <button className='btn delete-btn' onClick={() => dispatch(deleteItem(_id))}>delete</button>
+                    </div>}
+                </div>
             </div>
         </div>
     )

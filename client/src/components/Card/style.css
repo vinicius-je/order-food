@@ -1,24 +1,52 @@
 .card-container{
     max-width: 280px;
     margin-bottom: 40px;
-    padding: 15px;
     background-color: white;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.25), -3px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
 .card-container img{
-    width: 248px;
-    height: 165px;
-    margin: 10px 0;
+    width: 100%;
+    height: 188px;
 }
 
-.name, .price{
+.card-body{
+    margin: 10px;
+}
+
+.name{
     text-align: center;
+    margin: 3px 0;
+    text-transform: capitalize;
+}
+
+.description-box::after{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    margin: 3px 0;
+    background-color: #D8DBE4;
 }
 
 .description{
-    margin: 10px 0;
     font-size: .875rem;
-    text-align: center;
+    height: 34px;
+}
+
+.card-flex-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-box p{
+    font-size: .875rem;
+}
+
+.card-body .price{
+    font-weight: bold;
 }
 
 .btn{
@@ -29,13 +57,17 @@
 
 .order-btn{
     width: 100%;
-    padding: 5px 0;
-    font-size: 1.125rem;
-    background-color: #ECECEC;
+    padding: 8px 0;
+    font-size: 1rem;
+    background-color: var(--custom_red);
+    color: white;
+    text-transform: uppercase;
+    transition: .3s ease-in-out;
+    border-radius: 2px;
 }
 
 .order-btn:hover{
-    background-color: #bebebe;
+    transform: scale(1.02);
 }
 
 .edit-btn-container{

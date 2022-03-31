@@ -19,7 +19,6 @@ import Register from './pages/register'
 import Checkout from './pages/checkout'
 import Success from './pages/success'
 
-
 const rootElement = document.getElementById("root");
 render(
   <Provider store={store}>
