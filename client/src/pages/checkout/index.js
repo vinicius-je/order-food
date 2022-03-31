@@ -1,12 +1,12 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import CheckoutCads from '../../components/CheckoutCards'
-import './style.css'
-import TotalPrice from '../../components/TotalPrice'
-import CheckoutForm from '../../components/CheckoutForm'
-import ButtonWithArrow from '../../components/ButtonWithArrow'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import CheckoutCads from '../../components/CheckoutCads';
+import './style.css';
+import TotalPrice from '../../components/TotalPrice';
+import CheckoutForm from '../../components/CheckoutForm';
+import ButtonWithArrow from '../../components/ButtonWithArrow';
 
-export default function Checkout(){
+const Checkout = () => {
     const state = useSelector(state => state.orders);
 
     return(
@@ -24,3 +24,5 @@ export default function Checkout(){
         </div>
     )
 }
+
+export default Checkout;

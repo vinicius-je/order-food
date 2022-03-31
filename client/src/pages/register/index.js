@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import './style.css'
-import { useNavigate } from 'react-router'
-import { auth } from '../../redux/thunk'
-import Input from '../../components/Input'
-import RectangleButton from '../../components/RectangleButton'
-import Title from '../../components/Title'
+import React, { useEffect, useState } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import './style.css';
+import { useNavigate } from 'react-router';
+import { auth } from '../../redux/thunk';
+import Input from '../../components/Input';
+import RectangleButton from '../../components/RectangleButton';
+import Title from '../../components/Title';
 
-export default function Register(){
+const Register = () => {
     const [form, setForm] = useState({email: '', password: ''});
     const [confirmPwd, setConfirmPwd] = useState('');
     const state = useSelector(state => state.auth);
@@ -48,3 +48,5 @@ export default function Register(){
         </div>
     )
 }
+
+export default Register;

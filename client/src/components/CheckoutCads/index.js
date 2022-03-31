@@ -1,10 +1,10 @@
-import React from 'react'
-import Counter from './Counter'
-import './CheckoutCads.css'
+import React from 'react';
+import Counter from '../Counter';
+import './style.css';
 
-export default function CheckoutCads(props){
+const CheckoutCads = (props) => {
+    const {name, value, url} = props.item;
 
-    const {name, value, url} = props.item
     return(
         <div className='checkout-cards-container'>
             <img src={url} alt={name}></img>
@@ -14,3 +14,5 @@ export default function CheckoutCads(props){
         </div>
     )
 }
+
+export default CheckoutCads;

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { useParams } from 'react-router'
-import Form from '../../components/Form'
-import { editItem } from '../../redux/thunk'
-import Alert from '../../components/Alert'
-import './style.css'
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
+import Form from '../../components/Form';
+import { editItem } from '../../redux/thunk';
+import Alert from '../../components/Alert';
+import './style.css';
 
-export default function EditItem(){ 
+const EditItem = () => { 
 
     const {menu, alert} = useSelector(state => state);
     const [form, setForm] = useState({url: '', name: '', description: '', price: 0});
@@ -30,3 +30,5 @@ export default function EditItem(){
         </div>
     )
 }
+
+export default EditItem;

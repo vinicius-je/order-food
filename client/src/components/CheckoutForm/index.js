@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Input from './Input'
-import './CheckoutForm.css'
-import ButtonRounded from './ButtonRounded'
+import Input from '../Input/index'
+import './style.css'
+import ButtonRounded from '../ButtonRounded'
 import { useNavigate } from 'react-router'
 
-export default function CheckoutForm(){
+const CheckoutForm = () => {
 
     const [userData, setUserData] = useState({street: '',number: '', district: '', card_number: '', expiration_date: '', cvv: ''});
     // const dispatch = useDispatch();
@@ -64,3 +64,5 @@ export default function CheckoutForm(){
         </div>
     )
 }
+
+export default CheckoutForm;

@@ -1,10 +1,9 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import './Counter.css'
-import { decrement, increment } from '../redux/orders'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import './style.css';
+import { decrement, increment } from '../../redux/orders';
 
-export default function Counter(props){
-    
+const Counter = (props) => {
     const {id, quantity} = props.value;
     const dispatch = useDispatch();
 
@@ -16,3 +15,5 @@ export default function Counter(props){
         </div>
     )
 }
+
+export default Counter;

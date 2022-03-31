@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from  'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import ButtonRounded from '../../components/ButtonRounded'
-import Input from '../../components/Input'
-import RectangleButton from '../../components/RectangleButton'
-import Title from '../../components/Title'
-import { auth } from '../../redux/thunk'
-import './style.css'
+import React, { useEffect, useState } from  'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import Input from '../../components/Input';
+import RectangleButton from '../../components/RectangleButton';
+import Title from '../../components/Title';
+import { auth } from '../../redux/thunk';
+import './style.css';
 
-export default function Login(){
+const Login = () => {
 
     const [form, setForm] = useState({email: '', password: ''});
     const state = useSelector(state => state.auth);
@@ -45,3 +44,5 @@ export default function Login(){
         </div>
     )
 }
+
+export default Login;

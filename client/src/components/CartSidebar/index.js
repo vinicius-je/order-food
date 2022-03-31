@@ -1,13 +1,12 @@
-import React from 'react'
-import './CartSideBar.css'
-import {useDispatch, useSelector}  from 'react-redux'
-import CartOrderCard from './CartOrderCard'
-import { useNavigate } from 'react-router-dom'
-import TotalPrice from './TotalPrice'
-import { toggleCartSideBar } from '../redux/cart'
+import React from 'react';
+import './style.css';
+import {useDispatch, useSelector}  from 'react-redux';
+import CartOrderCard from '../CartOrderCard';
+import { useNavigate } from 'react-router-dom';
+import TotalPrice from '../TotalPrice';
+import { toggleCartSideBar } from '../../redux/cart';
 
-export default function CartSideBar(){
-
+const CartSidebar = () => {
     const {cart, orders} = useSelector(state => state);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -30,3 +29,5 @@ export default function CartSideBar(){
         </div>
     )
 }
+
+export default CartSidebar;

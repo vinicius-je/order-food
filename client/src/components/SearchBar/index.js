@@ -1,8 +1,7 @@
 import React from 'react';
-import './SearchBar.css';
+import './style.css';
 
-
-export default function SearchBar(){
+const SearchBar = () => {
     return(
         <div className='search-bar-container'>
             <input type='text' name='search' className='search-input' placeholder='Search for a dish'></input>
@@ -10,3 +9,5 @@ export default function SearchBar(){
         </div>
     )
 }
+
+export default SearchBar;

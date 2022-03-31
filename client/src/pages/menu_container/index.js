@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchMenuItems } from '../../redux/thunk'
-import './style.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMenuItems } from '../../redux/thunk';
+import './style.css';
 import Backgound from '../background';
 
-import Card from '../../components/Card'
+import Card from '../../components/Card';
 import SearchBar from '../../components/SearchBar';
 
-export default function Menu(){
+const Menu = () => {
     const menuItems = useSelector(state => state.menu);
     const dispatch = useDispatch();
 
@@ -25,3 +25,5 @@ export default function Menu(){
         </div>
     )
 }
+
+export default Menu;

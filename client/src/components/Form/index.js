@@ -1,20 +1,19 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import ButtonRounded from './ButtonRounded'
-import './Form.css'
-import Input from './Input'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import ButtonRounded from '../ButtonRounded';
+import './style.css';
+import Input from '../Input/index';
 
-export default function Form(props){
+const Form = (props) => {
     const {form, setForm, callback, btnValue} = props;
-
     const dispatch = useDispatch();
+
     // send data to backend
     function onSubmit(e){
         e.preventDefault();
         dispatch(callback(form));
         setForm({url: '', name: '', description: '', price: 0});
     }
-
     // set form data based in input name
     function formChange(e){
         setForm({...form, [e.target.name]: e.target.value});
@@ -30,3 +29,5 @@ export default function Form(props){
         </form>
     )
 }
+
+export default Form;

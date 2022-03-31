@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react' 
-import { useDispatch } from 'react-redux'
-import { useLocation, useNavigate } from 'react-router'
-import { createOrder } from '../model/orderModel'
-import { getClientOrder } from '../redux/orders'
-import { deleteItem } from '../redux/thunk'
-import { showCartSideBar } from '../redux/cart'
-import './Card.css'
+import React, { useEffect, useState } from 'react'; 
+import { useDispatch } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router';
+import { createOrder } from '../../model/orderModel';
+import { getClientOrder } from '../../redux/orders';
+import { deleteItem } from '../../redux/thunk';
+import { showCartSideBar } from '../../redux/cart';
+import './style.css';
 
-export default function Card(props){
+const Card = (props) => {
 
     const path = useLocation();
     const [editPage, setEditPage] = useState(false);
@@ -45,3 +45,6 @@ export default function Card(props){
         </div>
     )
 }
+
+
+export default Card;

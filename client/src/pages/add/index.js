@@ -1,9 +1,9 @@
-import React, { useState } from 'react' 
-import { useSelector } from 'react-redux'
-import Form from '../../components/Form'
-import { postNewMenuItem } from '../../redux/thunk'
-import Alert from '../../components/Alert'
-import './style.css'
+import React, { useState } from 'react' ;
+import { useSelector } from 'react-redux';
+import Form from '../../components/Form';
+import { postNewMenuItem } from '../../redux/thunk';
+import Alert from '../../components/Alert';
+import './style.css';
 
 export default function Add(){
 

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import ButtonWithArrow from '../../components/ButtonWithArrow'
-import './style.css'
-import successSVG from '../../icon/successSVG.svg'
-import { useDispatch, useSelector } from 'react-redux'
-import { removeAllClientOrders } from '../../redux/orders'
+import React, { useEffect, useState } from 'react';
+import ButtonWithArrow from '../../components/ButtonWithArrow';
+import './style.css';
+import successSVG from '../../icon/successSVG.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeAllClientOrders } from '../../redux/orders';
 
-export default function Success(){
+const Success = () => {
 
     const state = useSelector(state => state.orders);
     const [time, setTime] = useState();
@@ -32,3 +32,5 @@ export default function Success(){
         </>
     )
 }
+
+export default Success;

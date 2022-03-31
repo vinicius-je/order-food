@@ -1,7 +1,7 @@
-import React from 'react'
-import './Input.css'
+import React from 'react';
+import './style.css';
 
-export default function Input(props){
+const Input = (props) => {
     const {type, name, placeholder, minLength, maxLength, value, formChange, max, min, label, step, pattern} = props;
 
     return(
@@ -11,3 +11,5 @@ export default function Input(props){
         </div>
     )
 }
+
+export default Input;

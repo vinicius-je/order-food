@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import '../menu_container/style.css'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import '../menu_container/style.css';
 
 import Card from '../../components/Card'
 import { fetchMenuItems } from '../../redux/thunk'
 
-export default function Edit(){
+const Edit = () => {
 
     const state = useSelector(state => state.menu);
     const dispatch = useDispatch();
@@ -20,3 +20,5 @@ export default function Edit(){
         </div>
     )
 }
+
+export default Edit;

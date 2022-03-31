@@ -1,11 +1,10 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { removeClientOrder } from '../redux/orders'
-import Counter from './Counter'
-import './CartOrderCard.css'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { removeClientOrder } from '../../redux/orders';
+import Counter from '../Counter';
+import './style.css';
 
-export default function CartOrderCard(props){
-    
+const CartOrderCard = (props) => {   
     const {id, name, value, url} = props.item;
     const dispatch = useDispatch();
 
@@ -21,3 +20,5 @@ export default function CartOrderCard(props){
         </div>
     )
 }
+
+export default CartOrderCard;

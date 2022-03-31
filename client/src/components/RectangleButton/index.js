@@ -1,10 +1,12 @@
 import React from "react";
-import './RectangleButton.css'
+import './style.css';
 
-export default function RectangleButton(props){
+const RectangleButton = (props) => {
     return(
         <button className="rect-btn" type="submit">
             {props.value}
         </button>
     )
 }
+
+export default RectangleButton;

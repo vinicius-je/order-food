@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, Outlet } from 'react-router-dom'
-import { userLogout } from '../redux/user'
-import CartSideBar from './CartSideBar'
-import { toggleCartSideBar } from '../redux/cart'
-import './Header.css'
-import { userAuth } from '../redux/auth'
-import Title from './Title'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Outlet } from 'react-router-dom';
+import { userLogout } from '../../redux/user';
+import CartSidebar from '../CartSidebar';
+import { toggleCartSideBar } from '../../redux/cart';
+import './style.css';
+import { userAuth } from '../../redux/auth';
+import Title from '../Title';
 
-export default function Header(props){
+const Header = (props) => {
 
     const orders = useSelector(state => state.orders);
 
@@ -42,9 +42,11 @@ export default function Header(props){
                     <i className='fas fa-cart-plus' onClick={() => dispatch(toggleCartSideBar())}></i>
                 </div>
             </div>
-            <CartSideBar/>
+            <CartSidebar/>
         </header>
         <Outlet/>
         </>
     )
 }
+
+export default Header;
