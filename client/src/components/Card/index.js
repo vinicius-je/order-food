@@ -32,7 +32,9 @@ const Card = (props) => {
         <div className='card-container'>
             <div className='card'>
                 {/* <h4 className='number'>Nº{index + 1}</h4> */}
-                <img src={url} alt={name}></img>
+                <div className='card-img'>
+                    <img src={url} alt={name}></img>
+                </div>
                 <div className='card-body'>
                     <h3 className='name'>{name}</h3>
                     <div className='description-box'>
