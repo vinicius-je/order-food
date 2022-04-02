@@ -29,7 +29,7 @@
 }
 
 .link-btn{
-    padding: 5px 0;
+    padding: 5px 0 2px 0;
     margin-right: 40px;
     text-align: center;
     cursor: pointer;
@@ -58,7 +58,7 @@
     height: 15px;
     border-radius: 15px;
     color: white;
-    background-color: red;
+    background-color: var(--custom_red);
     font-size: .625rem;
     font-weight: bold;
     position: absolute;
