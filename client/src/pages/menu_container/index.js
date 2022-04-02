@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMenuItems } from '../../redux/thunk';
 import './style.css';
 import Backgound from '../background';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 import Card from '../../components/Card';
 import SearchBar from '../../components/SearchBar';
@@ -40,9 +41,9 @@ const Menu = () => {
             <Backgound/>
             <SearchBar/>
             <CategoriesNav category={setCategory}/>
-            <div className='container'>
+            <motion.div layout className='container'>
                 {menuItems.map((item, index) => <Card item={item} index={index} key={index}></Card>)}
-            </div>
+            </motion.div>
         </div>
     )
 }

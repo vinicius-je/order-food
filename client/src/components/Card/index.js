@@ -6,6 +6,7 @@ import { getClientOrder } from '../../redux/orders';
 import { deleteItem } from '../../redux/thunk';
 import { showCartSideBar } from '../../redux/cart';
 import './style.css';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 const Card = (props) => {
 
@@ -29,7 +30,7 @@ const Card = (props) => {
     }
 
     return(
-        <div className='card-container'>
+        <motion.div layout className='card-container'>
             <div className='card'>
                 {/* <h4 className='number'>Nº{index + 1}</h4> */}
                 <div className='card-img'>
@@ -62,7 +63,7 @@ const Card = (props) => {
                     </div>}
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
