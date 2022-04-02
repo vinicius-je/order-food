@@ -1,5 +1,5 @@
 .sidebar-container{
-    width: 320px;
+    width: 280px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -20,7 +20,7 @@
 .orders-container{
     padding-right: 5px;
     width: 100%;
-    height: 70%;
+    height: 76%;
     overflow-y: auto;
 }
 
@@ -41,13 +41,17 @@
 .checkout-btn{
     width: 100%;
     height: 40px;
-    font-size: 1.125rem;
-    border: 1px solid #C4C4C4;
+    background-color: transparent;
+    border: 1px solid #262626;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
     cursor: pointer;
 }
 
 .checkout-btn:hover{
-    background-color: #BEBEBE;
+    background-color: #262626;
+    color: white;
 }
 
 

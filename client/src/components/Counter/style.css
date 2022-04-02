@@ -1,9 +1,8 @@
 .counter{
-    border: 1px solid #b8b6b6;
     overflow: hidden;
     border-radius: 2px;
     width: 70px;
-    height: 28px;
+    height: 25px;
     display: flex;
 }
 
@@ -16,8 +15,9 @@
 }
 
 .counter-btn{
-    background: #c4c4c4;
+    background: var(--custom_gray);
     border: none;
+    border-radius: 3px;
     cursor: pointer;
 }
 

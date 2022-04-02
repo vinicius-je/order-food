@@ -10,13 +10,19 @@ const CartOrderCard = (props) => {
 
     return(
         <div className='order-box'>
-            <img src={url} alt={name}></img>
-            <div className='order-info'>
-                <h3>{name}</h3>
-                <h3>$ {(value).toFixed(2)}</h3>
-                <Counter value={props.item}/>
+            <div className='order-box-header'>
+                <h4 className='order-box-title'>{name}</h4>
+                <div className='remove-order-box' onClick={() => dispatch(removeClientOrder(id))}>
+                    <i className="fas fa-times remove-order-icon"></i>
+                </div>
             </div>
-            <i className="fas fa-times remove-order" onClick={() => dispatch(removeClientOrder(id))}></i>
+            <div className='order-box-img-container'>
+                <img src={url} alt={name}></img>
+            </div>
+            <div className='order-info'>
+                <Counter value={props.item}/>
+                <h3>$ {(value).toFixed(2)}</h3>
+            </div>
         </div>
     )
 }
