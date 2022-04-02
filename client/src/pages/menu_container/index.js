@@ -11,7 +11,7 @@ import CategoriesNav from '../../components/CategoriesNav';
 
 const Menu = () => {
     const [menuItems, setMenuItems] = useState([]);
-    const [category, setCategory] = useState();
+    const [category, setCategory] = useState(0);
     const menuItemsRedux = useSelector(state => state.menu);
     const dispatch = useDispatch();
 
@@ -36,10 +36,32 @@ const Menu = () => {
         setMenuItems(menuItemFiltered);
     }
 
+    const search = (e) => {
+        if (e.target.value === ''){
+            setMenuItems(menuItemsRedux);
+            return;
+        }
+        let value;
+        let searchMenuItems = menuItemsRedux.filter((item) => {
+            value = item.name.toLowerCase();
+            if(value.includes(e.target.value.toLowerCase())){
+                // if category is not defined return all menu items that matches with search input
+                if(category === 0){
+                    return item;
+                }
+                // if category is defined, just return the menu itens that matches with search input and category
+                if(item.category === category){
+                    return item;
+                }
+            }
+        });
+        setMenuItems(searchMenuItems);
+    }
+
     return(
         <div className='main-page'>  
             <Backgound/>
-            <SearchBar/>
+            <SearchBar onChange={search}/>
             <CategoriesNav category={setCategory}/>
             <motion.div layout className='container'>
                 {menuItems.map((item, index) => <Card item={item} index={index} key={index}></Card>)}
