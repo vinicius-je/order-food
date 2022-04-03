@@ -3,7 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--custom_gray);
+    background-image: url('../../assets/background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .register-container h1{

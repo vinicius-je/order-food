@@ -3,10 +3,20 @@
     height: 100vh;
     align-items: center;
     justify-content: space-around;
+    background-color: var(--custom_gray);
 }
 
 .checkout-box-1{
-    width: 430px;
+    width: 450px;
+}
+
+.cancel-btn{
+    padding: 8px 15px;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 3px;
 }
 
 .checkout-orders-container{
