@@ -13,8 +13,13 @@
 
 .checkout-form-container input{
     background-color: #6268C6;
+    border: none;
     color: white;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form-container label{
+    font-weight: lighter;
 }
 
 .checkout-form-container input::placeholder{
@@ -33,6 +38,10 @@
 .checkout-form-input-flex{
     display: flex;
     justify-content: space-between;
+}
+
+.checkout-form-flex-box{
+    width: 30%;
 }
 
 .checkout-form-btn-container{

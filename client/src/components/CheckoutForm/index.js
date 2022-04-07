@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Input from '../Input/index'
 import './style.css'
 import ButtonRounded from '../ButtonRounded'
 import { useNavigate } from 'react-router'
+import Select from '../Select'
+import RectangleButton from '../RectangleButton'
 
 const CheckoutForm = () => {
 
-    const [userData, setUserData] = useState({street: '',number: '', district: '', card_number: '', expiration_date: '', cvv: ''});
-    // const dispatch = useDispatch();
+    const [userData, setUserData] = useState({street: '',number: '', district: '', card_number: '', year: '', month: '', cvv: ''});
+    const [years, setYears] = useState([]);
+    const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
     const navigate = useNavigate();
 
     const formChange = (e) => {
@@ -18,7 +21,7 @@ const CheckoutForm = () => {
         e.preventDefault();
  
         paymentCheckout({card_number: userData.card_number});
-        setUserData({street: '',number: '', district: '', card_number: '', expiration_date: '', cvv: ''});
+        setUserData({street: '', number: '', district: '', card_number: '', year: '', month: '', cvv: ''});
     }
 
     const paymentCheckout = (data) => {
@@ -38,6 +41,17 @@ const CheckoutForm = () => {
             .catch((error) => alert('Payment not approved'))
     }
 
+    useEffect(() => {
+        let year = new Date().getFullYear();
+        for(let i = 0; i < 8; i++){
+            setYears((state) => [...state, year + i]);
+        }
+    }, [])
+
+    useEffect(() => {
+        console.log(userData)
+    }, [userData])
+
     return(
         <div className='checkout-form-container'>
              <form onSubmit={onSubmit}>
@@ -54,11 +68,18 @@ const CheckoutForm = () => {
                     <Input type='text' name='card_number' label='Credit card details' placeholder='1010 1010 1010 1010' pattern='[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}' value={userData.card_number} formChange={formChange}/>
                 </div>
                 <div className='checkout-form-input-container checkout-form-input-flex'>
-                    <Input type='text' name='expiration_date' placeholder='MM/YY' pattern='[01-12]{2}/[01-31]{2}' value={userData.expiration_date} formChange={formChange}/>
+                    <div className='checkout-form-flex-box'>
+                       <Select placeholder='Year' values={years} onChange={formChange}/>
+                    </div>
+                    <div className='checkout-form-flex-box'>
+                        <Select placeholder='Month' values={months} onChange={formChange}/>
+                    </div>
+                    <div className='checkout-form-flex-box'>
                     <Input type='text' name='cvv' placeholder='CVV' pattern='[0-9]{1}[0-9]{1}[0-9]{1}' value={userData.cvv} formChange={formChange}/>
+                    </div>
                 </div>
                 <div className='checkout-form-btn-container'>
-                    <ButtonRounded value='Buy'/>
+                    <RectangleButton value='Buy'/>
                 </div>
             </form>
         </div>
