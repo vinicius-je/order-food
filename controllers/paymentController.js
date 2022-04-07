@@ -7,7 +7,8 @@ const validade_payment = async (req, res) => {
 
     if(!card){ return res.status(400).send('payment not approved') }
 
-    res.send({payment: true})
+    // res.send({payment: true})
+    res.sendStatus(200);
 }
 
 module.exports = {validade_payment};

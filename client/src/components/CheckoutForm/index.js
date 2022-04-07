@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Input from '../Input/index'
 import './style.css'
-import ButtonRounded from '../ButtonRounded'
 import { useNavigate } from 'react-router'
 import Select from '../Select'
 import RectangleButton from '../RectangleButton'
 
 const CheckoutForm = () => {
-
     const [userData, setUserData] = useState({street: '',number: '', district: '', card_number: '', year: '', month: '', cvv: ''});
     const [years, setYears] = useState([]);
-    const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+    const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const navigate = useNavigate();
 
     const formChange = (e) => {
@@ -19,9 +17,14 @@ const CheckoutForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
- 
-        paymentCheckout({card_number: userData.card_number});
-        setUserData({street: '', number: '', district: '', card_number: '', year: '', month: '', cvv: ''});
+        let year = years[0];
+        let month = new Date().getMonth() + 1;
+
+        if (new Date(year, month) <= new Date(userData.year, userData.month)){
+            paymentCheckout({card_number: userData.card_number});
+        }else{
+            alert('Your credit card is expired');
+        }
     }
 
     const paymentCheckout = (data) => {
@@ -31,11 +34,10 @@ const CheckoutForm = () => {
             body: JSON.stringify(data)
         }
         fetch('/payment', options)
-            .then(res => res.json())
-            .then(data => {
-                if(data.payment) { 
-                    // alert('Payment approved')
-                    navigate('/success')
+            .then(res => {
+                if(res.ok){
+                    setUserData({street: '', number: '', district: '', card_number: '', year: '', month: '', cvv: ''});
+                    navigate('/success');
                 }
             })
             .catch((error) => alert('Payment not approved'))
@@ -47,10 +49,6 @@ const CheckoutForm = () => {
             setYears((state) => [...state, year + i]);
         }
     }, [])
-
-    useEffect(() => {
-        console.log(userData)
-    }, [userData])
 
     return(
         <div className='checkout-form-container'>
@@ -75,7 +73,7 @@ const CheckoutForm = () => {
                         <Select placeholder='Month' values={months} onChange={formChange}/>
                     </div>
                     <div className='checkout-form-flex-box'>
-                    <Input type='text' name='cvv' placeholder='CVV' pattern='[0-9]{1}[0-9]{1}[0-9]{1}' value={userData.cvv} formChange={formChange}/>
+                        <Input type='text' name='cvv' placeholder='CVV' pattern='[0-9]{1}[0-9]{1}[0-9]{1}' value={userData.cvv} formChange={formChange}/>
                     </div>
                 </div>
                 <div className='checkout-form-btn-container'>
