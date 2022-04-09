@@ -61,8 +61,8 @@ const Menu = () => {
     return(
         <div className='main-page'>  
             <Backgound/>
-            <SearchBar onChange={search}/>
             <CategoriesNav category={setCategory}/>
+            <SearchBar onChange={search}/>
             <motion.div layout className='container'>
                 {menuItems.map((item, index) => <Card item={item} index={index} key={index}></Card>)}
             </motion.div>

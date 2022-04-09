@@ -5,7 +5,6 @@
     border-radius: 10px;
     overflow: hidden;
     display: flex;
-    margin: 10px 0;
     box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
     background-color: white;
 }
@@ -24,10 +23,16 @@
 .search-btn{
     width: 15%;
     background-color: transparent;
-    /* background-color: var(--custom_red); */
 }
 
 .search-btn i{
     font-size: 20px;
     color: var(--custom_red);
 }
+
+
+        @media (max-width: 668px){
+            .search-bar-container{
+                margin: auto;
+            }
+        }

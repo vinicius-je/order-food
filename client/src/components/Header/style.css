@@ -1,8 +1,8 @@
 .header{
-    padding: 0 30px;
     background-color: none;
     display: grid;
     grid-template-columns: 180px auto 30px;
+    margin: 0 3%;
     align-items: center;
     height: 10vh;
 }
@@ -69,7 +69,7 @@
         @media(max-width: 580px){
             .header{
                 height: fit-content;
-                padding: 20px 30px;
+                padding: 20px 0;
                 grid-template: 1fr 1fr / 2fr 1fr;
             }
 
