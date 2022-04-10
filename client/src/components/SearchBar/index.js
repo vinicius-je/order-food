@@ -6,7 +6,7 @@ const SearchBar = (props) => {
     return(
         <div className='search-bar-container'>
             <input type='text' name='search' className='search-input' placeholder='Search for a dish' onChange={search}></input>
-            <button className='search-btn'><i class="fas fa-search"></i></button>
+            <button className='search-btn'><i className="fas fa-search"></i></button>
         </div>
     )
 }

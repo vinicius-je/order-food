@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { categories } from '../../categories';
+import { categoryOptions } from '../../options';
 
 const CategoriesNav = (props) => {
     const setCategory = props.category;
@@ -14,8 +14,8 @@ const CategoriesNav = (props) => {
             <h1 className='categories-title'>Categories</h1>
             <nav className='categories-nav'>
                 <ul className='categories-nav-ul'>
-                    {categories.map((category) => (
-                        <li onClick={() => onClick(category.value)} key={category.value}>{category.title}</li>
+                    {categoryOptions.map((category) => (
+                        <li onClick={() => onClick(category.value)} key={category.value}>{category.name}</li>
                     ))}
                 </ul>
             </nav>
