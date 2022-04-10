@@ -8,7 +8,8 @@ import RectangleButton from '../RectangleButton'
 const CheckoutForm = () => {
     const [userData, setUserData] = useState({street: '',number: '', district: '', card_number: '', year: '', month: '', cvv: ''});
     const [years, setYears] = useState([]);
-    const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    const [months, setMonths] = useState([]);
+    // const months = [{name: 1, value: 1}, ];
     const navigate = useNavigate();
 
     const formChange = (e) => {
@@ -46,7 +47,10 @@ const CheckoutForm = () => {
     useEffect(() => {
         let year = new Date().getFullYear();
         for(let i = 0; i < 8; i++){
-            setYears((state) => [...state, year + i]);
+            setYears((state) => [...state, {"value": year + 1, "name": year + i}]);
+        }
+        for(let j = 1; j < 13 ; j++){
+            setMonths((state) => [...state, {"value": j - 1, "name": j}]);
         }
     }, [])
 

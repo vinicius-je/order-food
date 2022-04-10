@@ -11,7 +11,7 @@
     width: 380px;
 }
 
-.checkout-form-container input{
+.checkout-form-container input, .checkout-form-container .select{
     background-color: #6268C6;
     border: none;
     color: white;
@@ -22,7 +22,7 @@
     font-weight: lighter;
 }
 
-.checkout-form-container input::placeholder{
+.checkout-form-container input::placeholder,  .checkout-form-container .select{
     color: rgba(255, 255, 255, 0.726);
 }
 

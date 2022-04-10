@@ -5,6 +5,25 @@
     text-align: center;
 }
 
+.form-container-flexbox{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-select-box{
+    width: 30%;
+    text-align: left;
+}
+
+.form-select-box label{
+    font-weight: bold;
+}
+
+.form-select-box select{
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+}
+
 .form-container button{
     margin-top: 20px;
 }

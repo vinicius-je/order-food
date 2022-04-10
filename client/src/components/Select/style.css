@@ -6,12 +6,11 @@
     height: 40px;
     width: 100%;
     margin-top: 5px;
-    background-color: #6268C6;
+    background-color: white;
     border: none;
-    color: rgba(255, 255, 255, 0.726);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
 }   
 
 .select option{
-    color: white;
+    color: black;
 }

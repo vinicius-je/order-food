@@ -13,7 +13,7 @@ export default function Add(){
     return(
         <div className='add-page-container'>
             {alert.show ? <Alert value='Item added'/> : <></>}
-            <h3 className='add-menu-title'>Add a new menu item</h3>
+            <h2 className='add-menu-title'>New menu item</h2>
             <Form form={form} setForm={setForm} callback={postNewMenuItem} btnValue='Send'></Form>
         </div>
     )
