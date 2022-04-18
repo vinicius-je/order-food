@@ -32,7 +32,6 @@ const Card = (props) => {
     return(
         <motion.div layout className='card-container'>
             <div className='card'>
-                {/* <h4 className='number'>Nº{index + 1}</h4> */}
                 <div className='card-img'>
                     <img src={url} alt={name}></img>
                 </div>

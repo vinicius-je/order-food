@@ -18,6 +18,7 @@ export const portionOptions = [
 ]
 
 export const categoryOptions = [
+    {value: 0, name: 'All'},
     {value: 1, name: 'Special Dishes'},
     {value: 2, name: 'Desert'},
     {value: 3, name: 'Salad'},

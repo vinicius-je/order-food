@@ -20,9 +20,10 @@ const CheckoutForm = () => {
         e.preventDefault();
         let year = years[0];
         let month = new Date().getMonth() + 1;
-
+        
         if (new Date(year, month) <= new Date(userData.year, userData.month)){
-            paymentCheckout({card_number: userData.card_number});
+            console.log('sim');
+            // paymentCheckout({card_number: userData.card_number});
         }else{
             alert('Your credit card is expired');
         }

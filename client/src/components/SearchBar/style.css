@@ -1,12 +1,10 @@
 .search-bar-container{
     width: 350px;
     height: 45px;
-    border: none;
-    border-radius: 10px;
+    border: 1px solid var(--custom_gray);
+    border-radius: 4px;
     overflow: hidden;
     display: flex;
-    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
-    background-color: white;
 }
 
 .search-input, .search-btn{

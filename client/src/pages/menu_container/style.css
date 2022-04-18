@@ -1,12 +1,11 @@
-.main-page{
-    height: 100%;
-    padding: 0 3%;
-}
-
 .container{
     display: grid;
     grid-template-columns: repeat(auto-fit, 294px);
     justify-content: center;
     column-gap: 30px;
-    margin-top: 20px;
+    margin: 20px 3% 0;
+}
+
+.empy-msg{
+    text-align: center;
 }

@@ -38,19 +38,12 @@
 }
 
 
-        @media screen and (max-width: 500px){
+        @media (max-width: 500px){
             .checkout-cards-container{
                 font-size: 12px;
-                padding: 10px 0;
             }
-
             .checkout-cards-container .counter{
                 margin: 10px 0;
                 width: 60px;
-            }
-
-            .checkout-cards-container img{
-                width: 75px;
-                height: 50px;
             }
         }

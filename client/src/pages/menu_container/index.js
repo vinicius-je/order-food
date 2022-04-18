@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMenuItems } from '../../redux/thunk';
 import './style.css';
-import Backgound from '../background';
 import { motion } from 'framer-motion/dist/framer-motion';
 
 import Card from '../../components/Card';
-import SearchBar from '../../components/SearchBar';
 import CategoriesNav from '../../components/CategoriesNav';
 
 const Menu = () => {
@@ -60,12 +58,11 @@ const Menu = () => {
 
     return(
         <div className='main-page'>  
-            <Backgound/>
-            <CategoriesNav category={setCategory}/>
-            <SearchBar onChange={search}/>
+            <CategoriesNav setCategory={setCategory} onChange={search}/>
             <motion.div layout className='container'>
                 {menuItems.map((item, index) => <Card item={item} index={index} key={index}></Card>)}
             </motion.div>
+            {!menuItems.length && <h3 className='empy-msg'>Item não encontrado</h3>}
         </div>
     )
 }

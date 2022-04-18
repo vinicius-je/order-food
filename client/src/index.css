@@ -10,6 +10,7 @@
 :root{
   --custom_red: #E91515;
   --custom_gray: #EBEBEB;
+  --light_gay: #F6F6F6;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light_gay);
 }
 
 html{
