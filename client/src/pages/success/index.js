@@ -12,14 +12,18 @@ const Success = () => {
 
     const dispatch = useDispatch();
 
+    const sumTime = (total, item) => {
+        return total += Number(item.time);
+    }
+
     useEffect(() => {
-        setTime(state.length * 15);
+        setTime(state.reduce(sumTime, 0));
         // clean the orders of the client from state
         dispatch(removeAllClientOrders());
     }, [])
 
     return(
-        <>
+        <div className='sucess-page'>
             <header className='Success-header'>
                 <ButtonWithArrow value='Menu' icon='left' route='menu'/>
                 <ButtonWithArrow value='Logout' icon='right' route=''/>
@@ -29,7 +33,7 @@ const Success = () => {
                 <h3>Payment approved</h3>
                 <h3>Your orders will be prepared and delivered in {time} minutes</h3>
             </div>
-        </>
+        </div>
     )
 }
 
