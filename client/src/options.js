@@ -27,3 +27,4 @@ export const categoryOptions = [
     {value: 6, name: 'Drink'},
     {value: 7, name: 'Wine'},
 ]
+

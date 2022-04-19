@@ -9,7 +9,6 @@ const CheckoutForm = () => {
     const [userData, setUserData] = useState({street: '',number: '', district: '', card_number: '', year: '', month: '', cvv: ''});
     const [years, setYears] = useState([]);
     const [months, setMonths] = useState([]);
-    // const months = [{name: 1, value: 1}, ];
     const navigate = useNavigate();
 
     const formChange = (e) => {
@@ -18,12 +17,11 @@ const CheckoutForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        let year = years[0];
-        let month = new Date().getMonth() + 1;
+        let year = years[0].value;
+        let month = new Date().getMonth();
         
         if (new Date(year, month) <= new Date(userData.year, userData.month)){
-            console.log('sim');
-            // paymentCheckout({card_number: userData.card_number});
+            paymentCheckout({card_number: userData.card_number});
         }else{
             alert('Your credit card is expired');
         }
@@ -40,15 +38,18 @@ const CheckoutForm = () => {
                 if(res.ok){
                     setUserData({street: '', number: '', district: '', card_number: '', year: '', month: '', cvv: ''});
                     navigate('/success');
+                }else{
+                    alert('Payment not approved')
                 }
             })
-            .catch((error) => alert('Payment not approved'))
     }
 
     useEffect(() => {
         let year = new Date().getFullYear();
+        setYears([]);
+        setMonths([]);
         for(let i = 0; i < 8; i++){
-            setYears((state) => [...state, {"value": year + 1, "name": year + i}]);
+            setYears((state) => [...state, {"value": year + i, "name": year + i}]);
         }
         for(let j = 1; j < 13 ; j++){
             setMonths((state) => [...state, {"value": j - 1, "name": j}]);
