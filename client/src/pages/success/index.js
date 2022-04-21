@@ -13,10 +13,12 @@ const Success = () => {
     const dispatch = useDispatch();
 
     const sumTime = (total, item) => {
-        return total += Number(item.time);
+        console.log(item);
+        return total += item.totalTime;
     }
 
     useEffect(() => {
+        console.log(state);
         setTime(state.reduce(sumTime, 0));
         // clean the orders of the client from state
         dispatch(removeAllClientOrders());

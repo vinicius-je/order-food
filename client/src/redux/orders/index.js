@@ -18,13 +18,13 @@ const counter = (state, payload ,type) => {
         if(item.id === payload){
             if(type === 'INCREMENT'){
                 item.quantity += 1;
-                item.value = item.quantity * item.price;
             }else if(item.quantity === 1){
                 return item.quantity;
             }else{
                 item.quantity -= 1;
-                item.value = item.quantity * item.price;
             }
+            item.value = item.quantity * item.price;
+            item.totalTime = item.quantity * item.time;
         }
     })
 }

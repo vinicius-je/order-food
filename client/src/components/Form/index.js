@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import './style.css';
 import Input from '../Input';
@@ -9,7 +9,6 @@ import { categoryOptions, portionOptions, timeOptions } from '../../options';
 const Form = (props) => {
     const {form, setForm, callback, btnValue} = props;
     const dispatch = useDispatch();
-
     // send data to backend
     function onSubmit(e){
         e.preventDefault();
@@ -20,10 +19,6 @@ const Form = (props) => {
     function formChange(e){
         setForm({...form, [e.target.name]: e.target.value});
     }
-
-    // useEffect(() => {
-    //     console.log(form);
-    // }, [form])
 
     return(
         <form className='form-container' onSubmit={onSubmit}>
