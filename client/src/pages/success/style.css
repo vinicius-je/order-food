@@ -1,20 +1,13 @@
-.sucess-page{
+.success-page{
     background-image: url("../../assets/background.jpg");
     background-size: cover;
     height: 100vh;
-}
-
-.Success-header{
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 40px;
 }
 
-.Success-header button{
-    margin: 0 10px 0;
-}
-
-.Success-rectangle{
+.success-rectangle{
     width: 600px;
     height: 400px;
     background-color: white;
@@ -23,28 +16,51 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+    border-radius: 3px;
 }
 
-.Success-rectangle img{
+.success-rectangle img{
     width: 436px;
     height: 192px;
     margin-bottom: 30px;
 }
 
+.success-btn-container{
+    /* background-color: red; */
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    height: 30px;
+}
+
+.success-btn{
+    width: 120px;
+    color: white;
+    font-size: 0.9rem;
+    background-color: red;
+    transition: .3s ease-in-out;
+    border-radius: 2px;
+}
+
+.success-btn:hover{
+    transform: scale(1.03);
+}
+
 
         @media screen and (max-width: 620px){
-            .Success-rectangle{
+            .success-rectangle{
                 width: 90%;
                 font-size: 16px;
             }
 
-            .Success-rectangle img{
+            .success-rectangle img{
                 width: 275px;
                 height: 121px;
                 margin-bottom: 30px;
             }
 
-            .Success-rectangle h3{
+            .success-rectangle h3{
                 text-align: center;
                 padding: 0 20px;
             }

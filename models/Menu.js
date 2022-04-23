@@ -5,7 +5,7 @@ const menuItemSchema = mongoose.Schema({
     name: {type :String, require: true, minlength: 3, maxlenght: 30},
     description: {type: String, require: true, minlength: 3, maxlenght: 100},
     price: {type: Number, require: true, min: 0, max: 500},
-    category: {type: Number, require: true, min: 1, max: 10},
+    category: {type: Number, require: true, min: 0, max: 10},
     time: {type: Number, require: true, min: 1, max: 55},
     portion: {type: Number, require, min: 1, max: 6}
 })
