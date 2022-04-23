@@ -5,10 +5,12 @@ import Input from '../Input';
 import RectangleButton from '../RectangleButton'
 import Select from '../Select';
 import { categoryOptions, portionOptions, timeOptions } from '../../options';
+import { useNavigate } from 'react-router';
 
 const Form = (props) => {
     const {form, setForm, callback, btnValue} = props;
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     // send data to backend
     function onSubmit(e){
         e.preventDefault();

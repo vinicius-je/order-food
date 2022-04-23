@@ -26,7 +26,7 @@ const EditItem = () => {
         <div className='edit-item-page-container'>
             {alert.show ? <Alert value='Item edited'/> : <></>}
             <h2 className='edit-menu-item'>Edit menu item</h2>
-            {form !== '' ? <Form form={form} setForm={setForm} callback={editItem} btnValue='Edit'/> : 'carregando' }
+            {form !== '' ? <Form form={form} setForm={setForm} callback={editItem} btnValue='Edit'/> : 'carregando'}
         </div>
     )
 }
