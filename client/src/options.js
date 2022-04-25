@@ -11,7 +11,7 @@ export const timeOptions = [
 export const portionOptions = [
     {value: 1, name: 1},
     {value: 2, name: 2},
-    {value: 3, name: 2},
+    {value: 3, name: 3},
     {value: 4, name: 4},
     {value: 6, name: 6},
     {value: 8, name: 8},
@@ -20,7 +20,7 @@ export const portionOptions = [
 export const categoryOptions = [
     {value: 0, name: 'All'},
     {value: 1, name: 'Special Dishes'},
-    {value: 2, name: 'Desert'},
+    {value: 2, name: 'Dessert'},
     {value: 3, name: 'Salad'},
     {value: 4, name: 'Steak'},
     {value: 5, name: 'Pasta'},
