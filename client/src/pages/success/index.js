@@ -3,8 +3,9 @@ import './style.css';
 import successSVG from '../../icon/successSVG.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeAllClientOrders } from '../../redux/orders';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { userLogout } from '../../redux/user';
+import auth, { userAuth } from '../../redux/auth';
 
 const Success = () => {
 
@@ -15,18 +16,16 @@ const Success = () => {
     const navigate = useNavigate();
 
     const sumTime = (total, item) => {
-        console.log(item);
         return total += item.totalTime;
     }
 
     const logout = () => {
         localStorage.removeItem('token');
         dispatch(userLogout([]));
-        navigate('/')
+        dispatch(userAuth(false));
     }
 
     useEffect(() => {
-        console.log(state);
         setTime(state.reduce(sumTime, 0));
         // clean the orders of the client from state
         dispatch(removeAllClientOrders());
@@ -40,7 +39,7 @@ const Success = () => {
                 <h3>Your orders will be prepared and delivered in {time} minutes</h3>
                 <div className='success-btn-container'>
                     <button className='success-btn' onClick={() => navigate('/menu')}>Menu</button>
-                    <button className='success-btn' onClick={() => logout()}>Logout</button>
+                    <button className='success-btn' onClick={() => {navigate('/'); logout()}}>Logout</button>
                 </div>
             </div>
         </div>

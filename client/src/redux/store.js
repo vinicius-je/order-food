@@ -5,7 +5,7 @@ import ordersReducer from './orders'
 import userReducer from './user'
 import cartReducer from './cart'
 import alertReducer from './alert'
-import userAuthReducer from "./auth"
+import userAuthReducer from './auth'
 
 export default configureStore({
     reducer:{
