@@ -1,3 +1,7 @@
+.add-page-container{
+    position: relative;
+}
+
 .add-menu-title{
     text-align: center;
     margin: 10px 0;

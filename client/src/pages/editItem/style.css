@@ -1,3 +1,7 @@
+.edit-item-page-container{
+    position: relative;
+}
+
 .edit-menu-item{
     text-align: center;
     margin: 10px 0;

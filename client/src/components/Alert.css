@@ -4,10 +4,9 @@
     color: white;
     padding: 10px 0;
     width: 360px;
-    margin: 20px auto 0;
     border-radius: 3px;
     position: absolute;
-    top: 8%;
+    top: 0;
     left: 50%;
     transform: translate(-50%);
 }
