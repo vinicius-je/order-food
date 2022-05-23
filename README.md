@@ -4,6 +4,7 @@
 Criar um sistema para relizar pedidos de comida.
 
 ## Antevisão
+![image](https://github.com/vinicius-je/order-food/blob/main/screenshots/login.png)
 
 
 ## Tópicos implementados
