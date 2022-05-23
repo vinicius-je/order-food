@@ -1,18 +1,15 @@
 <h1 align='center'>Order Food</h1>
 
 ## Objetivo
-Criar um sistema para relizar pedidos de comida
+Criar um sistema para relizar pedidos de comida.
 
 ## Antevisão
-![image](https://user-images.githubusercontent.com/67986109/150002180-8e280c20-9e7c-40d0-b6fe-6936136e830e.png)
-![image](https://user-images.githubusercontent.com/67986109/150002271-e4ce6fa1-49c5-4630-ae9c-379e1def9c6e.png)
-![image](https://user-images.githubusercontent.com/67986109/150002389-85765a11-380c-43b4-9afd-6a18f7ae29f6.png)
-![image](https://user-images.githubusercontent.com/67986109/150002676-47faadb4-3f35-4890-95e2-33a4357c9254.png)
-![image](https://user-images.githubusercontent.com/67986109/150002455-d0a67f2b-00d0-4cbb-a8de-51b485369901.png)
-![image](https://user-images.githubusercontent.com/67986109/150002505-a7a7d4a8-9ff5-4d19-9712-e8f02c63db1b.png)
-
-
-
+![image](https://user-images.githubusercontent.com/67986109/169856478-aadd6fec-841a-41a5-8d7c-ca2bb6c51ba2.png)
+![image](https://user-images.githubusercontent.com/67986109/169856698-b252c173-5e44-4242-89d0-49d6189ae1c3.png)
+![image](https://user-images.githubusercontent.com/67986109/169856911-f70374da-44d6-4062-9f1f-632d4aef2f0f.png)
+![image](https://user-images.githubusercontent.com/67986109/169857134-f1d6f6a5-1211-47a0-98dc-06699927d69e.png)
+![image](https://user-images.githubusercontent.com/67986109/169857208-8e7110ef-7fed-465c-8421-b2e93b4a31b3.png)
+![image](https://user-images.githubusercontent.com/67986109/169857375-fb1db222-783b-41f2-9bb0-0432c4f38af0.png)
 
 
 
