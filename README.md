@@ -5,11 +5,10 @@ Criar um sistema para relizar pedidos de comida.
 
 ## Antevisão
 ![image](https://user-images.githubusercontent.com/67986109/169861693-9de56428-ebee-4afb-b858-9922e7b0932e.png)
+![image](https://user-images.githubusercontent.com/67986109/169862595-e68dabdc-b92e-4fe5-a5f0-0a94ecf84ad1.png)
+![image](https://user-images.githubusercontent.com/67986109/169863164-2e5c170e-c928-4bdd-962e-d29bb26ae94c.png)
+![image](https://user-images.githubusercontent.com/67986109/169863371-5ca949ea-cec8-4e7d-a71f-e5df9bb1a8e5.png)
 
-
-
-![image](https://user-images.githubusercontent.com/67986109/169861085-67d021c8-ecb0-477f-bdf2-803b1a9e9715.png)
-![image](https://user-images.githubusercontent.com/67986109/169861340-e26e380a-de64-4448-92b8-fe5a5915bbf5.png)
 
 
 
